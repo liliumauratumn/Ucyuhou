@@ -135,14 +135,7 @@ const ogType = isArticlePage ? 'article' : 'website';
             {isArticlePage ? (
               <slot />
             ) : (
-              <>
-                <p>{getPlainExcerpt(activeArticle.body)}</p>
-                <div style="margin-top: var(--sp-xl);">
-                  <a href={`/articles/${activeArticle.data.slug}/`} class="kakera-read-more">
-                    この思考の全文を読む ↗
-                  </a>
-                </div>
-              </>
+              <p>{getPlainExcerpt(activeArticle.body)}</p>
             )}
           </div>
         </article>
