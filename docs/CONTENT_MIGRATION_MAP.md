@@ -33,10 +33,10 @@
 | `article-narrow.html` | 思考はなぜ現実を狭くするのか | 悟り | `narrow` | スタブ（極小: 63文字）※加筆せずそのまま移行 | `assets/images/hero-main.jpg` | `default` | 未移行 |
 | `article-no-resistance.html` | 抵抗の不在が引き寄せの正体である | 引き寄せ | `no-resistance` | スタブ（極小: 63文字）※加筆せずそのまま移行 | `assets/images/hero-main.jpg` | `default` | 未移行 |
 | `article-quantum.html` | 量子力学と意識の境界、観測者効果は引き寄せを証明するか | 引き寄せ | `quantum` | スタブ（極小: 79文字）※加筆せずそのまま移行 | `assets/images/hero-main.jpg` | `default` | 未移行 |
-| `article-satori.html` | 悟りとは、特別な境地ではない | 悟り | `satori` | 十分な長さ（完成: 751文字） | `assets/images/hero-main.jpg` | `default` | 未移行 |
+| `article-satori.html` | 悟りとは、特別な境地ではない | 悟り | `satori` | 十分な長さ（完成: 751文字） | `assets/images/hero-main.jpg` | `default` | 代表移行済み・スキーマ検証済み |
 | `article-scale.html` | 感情のスケールを超えた視点 | 引き寄せ | `scale` | スタブ（極小: 69文字）※加筆せずそのまま移行 | `assets/images/hero-main.jpg` | `default` | 未移行 |
 | `article-tolle.html` | エックハルト・トールの「いまここ」は時間論ではない | 悟り | `tolle` | スタブ（極小: 57文字）※加筆せずそのまま移行 | `assets/images/hero-main.jpg` | `default` | 未移行 |
-| `article-tsushin.html` | 宇宙通信・創刊号 | 宇宙通信 | `tsushin` | 十分な長さ（完成） | `assets/images/card-water.jpg` | `cosmic` | 未移行 |
+| `article-tsushin.html` | 宇宙通信・創刊号 | 宇宙通信 | `tsushin` | 十分な長さ（完成） | `assets/images/card-water.jpg` | `cosmic` | 代表移行済み・スキーマ検証済み |
 | `article-vortex.html` | エイブラハムの Vortex は「私の消滅」に近い | 引き寄せ | `vortex` | スタブ（極小: 57文字）※加筆せずそのまま移行 | `assets/images/hero-main.jpg` | `default` | 未移行 |
 
 ---
