@@ -1,0 +1,145 @@
+/* ============================================================
+   DESIGN TOKENS — 宇宙を悟り法則を引き寄せる / Ucyuhou
+   CHANEL-inspired monochrome palette
+   ============================================================ */
+
+:root {
+  /* ── Colours ── */
+  --color-bg:            #FFFFFF;
+  --color-bg-subtle:     #FAFAFA;
+  --color-bg-footer:     #0A0A0A;
+  --color-text:          #1A1A1A;
+  --color-text-secondary:#404040;
+  --color-text-tertiary: #666666;
+  --color-text-inverse:  #F0F0F0;
+  --color-border:        #E5E5E5;
+  --color-border-dark:   #333333;
+  --color-highlight-bg:  #F5F2ED;
+  --color-highlight-border: #D4C9B8;
+  --color-link:          #1A1A1A;
+  --color-link-hover:    #555555;
+  --color-tag-bg:        #F0F0F0;
+  --color-tag-text:      #404040;
+  --color-action-bar-bg: #FAFAFA;
+  --color-button-bg:     #1A1A1A;
+  --color-button-text:   #FFFFFF;
+  --color-button-hover:  #333333;
+
+  /* ── Typography ── */
+  --font-sans:   'Noto Sans JP', 'Helvetica Neue', Arial, sans-serif;
+  --font-serif:  'Noto Serif JP', 'Georgia', serif;
+
+  --fw-regular:  400;
+  --fw-medium:   500;
+  --fw-bold:     700;
+
+  /* font sizes — clamp for fluid sizing */
+  --fs-xs:   0.8125rem;  /* 13px */
+  --fs-sm:   0.9375rem;  /* 15px */
+  --fs-base: 1rem;       /* 16px */
+  --fs-md:   1.125rem;   /* 18px */
+  --fs-lg:   1.25rem;    /* 20px */
+  --fs-xl:   1.5rem;     /* 24px */
+  --fs-2xl:  clamp(1.75rem, 2.5vw, 2rem);    /* 28–32px */
+  --fs-3xl:  clamp(2rem, 3vw, 2.5rem);       /* 32–40px */
+  --fs-4xl:  clamp(2.25rem, 4vw, 3rem);      /* 36–48px */
+  --fs-hero: clamp(2.5rem, 5vw, 3.5rem);     /* 40–56px */
+
+  /* line heights */
+  --lh-tight:   1.3;
+  --lh-normal:  1.6;
+  --lh-relaxed: 1.9;
+  --lh-loose:   2.0;
+
+  /* letter spacing */
+  --ls-tight:  -0.02em;
+  --ls-normal:  0;
+  --ls-wide:    0.04em;
+  --ls-widest:  0.12em;
+
+  /* ── Spacing ── */
+  --sp-xs:  0.25rem;   /* 4px */
+  --sp-sm:  0.5rem;    /* 8px */
+  --sp-md:  1rem;      /* 16px */
+  --sp-lg:  1.5rem;    /* 24px */
+  --sp-xl:  2rem;      /* 32px */
+  --sp-2xl: 3rem;      /* 48px */
+  --sp-3xl: 4rem;      /* 64px */
+  --sp-4xl: 6rem;      /* 96px */
+
+  /* ── Layout ── */
+  --max-width-site:    1200px;
+  --max-width-article: 680px;
+  --max-width-narrow:  540px;
+  --header-height:     auto;
+  --side-padding:      clamp(1rem, 4vw, 2rem);
+
+  /* ── Borders ── */
+  --border-thin:   1px solid var(--color-border);
+  --border-medium: 2px solid var(--color-border);
+
+  /* ── Transitions ── */
+  --transition-fast:   150ms ease;
+  --transition-base:   250ms ease;
+  --transition-slow:   400ms ease;
+
+  /* ── Z-index ── */
+  --z-header:  100;
+  --z-overlay: 200;
+  --z-modal:   300;
+
+  /* ══════════════════════════════════════════════════════════════
+     PROTECTED IRREGULARITY — 必須ノイズ人格値
+     visually selected — do not normalize without rerendering and comparison
+     These are NOT a scale. Each value was chosen individually.
+     ══════════════════════════════════════════════════════════════ */
+
+  /* Card border-weight personalities — not all the same line thickness */
+  --border-card-a: 1px solid var(--color-border);
+  --border-card-b: none;
+  --border-card-c: 1px solid rgba(0,0,0,0.06);
+  --border-card-d: 1px solid var(--color-border);
+
+  /* Micro-tilt personalities */
+  --tilt-a: rotate(-0.4deg);
+  --tilt-b: rotate(0.3deg);
+  --tilt-c: rotate(-0.6deg);
+  --tilt-d: rotate(0.2deg);
+
+  /* Transition easing — desynchronized curves, not a progression */
+  --ease-a: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-b: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --ease-c: cubic-bezier(0.33, 0.1, 0.3, 1);
+  --ease-d: cubic-bezier(0.19, 0.57, 0.51, 0.99);
+
+  /* Transition durations — not uniform */
+  --dur-a: 0.28s;
+  --dur-b: 0.32s;
+  --dur-c: 0.25s;
+  --dur-d: 0.35s;
+
+  /* Category tag personalities — letter-spacing and padding, not shape */
+  --tag-ls-satori:    0.06em;
+  --tag-ls-hikiyose:  0.03em;
+  --tag-ls-law:       0.08em;
+  --tag-ls-mezame:    0.04em;
+  --tag-ls-bunsho:    0.05em;
+  --tag-pad-satori:   0.2em 0.55em;
+  --tag-pad-hikiyose: 0.25em 0.65em;
+  --tag-pad-law:      0.15em 0.7em;
+  --tag-pad-mezame:   0.22em 0.5em;
+  --tag-pad-bunsho:   0.18em 0.6em;
+
+  /* Blockquote border irregularity */
+  --bq-border-a: 3px;
+  --bq-border-b: 4px;
+  --bq-border-c: 2px;
+}
+
+/* ── Breakpoints (for reference; used in media queries) ──
+   xs:   360px   — iPhone SE / small Android
+   sm:   390px   — iPhone 12 mini
+   md:   768px   — iPad portrait
+   lg:  1024px   — Desktop / iPad landscape
+   xl:  1280px   — Wide desktop
+   ─────────────────────────────────────────────────── */

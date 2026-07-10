@@ -1,0 +1,203 @@
+/* ============================================================
+   STATIC PAGES — css/pages/static-page.css
+   Balanced: Rich Noise × Fitts's Law × CHANEL Restraint
+   ============================================================ */
+
+/* 1. SVG Noise Background (Richness & Restraint) */
+.static-page-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 4rem 0 6rem; /* Fitts's Law: Reduced vertical distance */
+  position: relative;
+}
+
+.static-page-wrapper::before {
+  content: "";
+  position: absolute;
+  top: -4rem; left: -50vw; right: -50vw; bottom: -6rem;
+  background-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noiseFilter)" opacity="0.04"/%3E%3C/svg%3E');
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* 2. Typography (Chanel) */
+.static-hero {
+  margin-bottom: 3.5rem; /* Fitts's Law: Compact margin */
+  text-align: left;
+}
+
+.static-english-label {
+  font-family: var(--font-sans);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.3em;
+  color: var(--color-text-tertiary);
+  margin-bottom: var(--sp-xs);
+  text-transform: uppercase;
+}
+
+.static-title {
+  font-family: var(--font-sans);
+  font-size: 2.5rem;
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.1em;
+  color: var(--color-text);
+  line-height: var(--lh-tight);
+  margin: 0;
+  /* Ucyuhou Noise: Very subtle tilt */
+  transform: rotate(-0.2deg);
+  display: inline-block;
+}
+
+/* 3. Grid & Cards (Fitts's Law + Rich Interactions) */
+.static-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--sp-xl); /* Compressed gap */
+}
+
+.static-card {
+  position: relative;
+  /* Subtly offset the text content for "noise", but no borders or backgrounds */
+  z-index: 1;
+}
+
+/* Subtle staggered layout (Noise) */
+.static-card:nth-child(even) {
+  transform: translateY(1.5rem) rotate(0.2deg);
+}
+
+.static-card:nth-child(odd) {
+  transform: rotate(-0.2deg);
+}
+
+.static-card h2 {
+  font-family: var(--font-sans);
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--ls-widest);
+  color: var(--color-text);
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--color-text);
+  display: inline-block;
+  padding-bottom: 0.25rem;
+}
+
+.static-card p {
+  font-family: var(--font-serif);
+  font-size: var(--fs-base);
+  line-height: var(--lh-loose);
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+/* 4. Contact Form (Fitts's Law + Chanel + Noise) */
+.static-form-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: var(--sp-2xl);
+  align-items: start;
+}
+
+.static-form-info {
+  position: sticky;
+  top: 6rem;
+}
+
+.static-form {
+  position: relative;
+  transform: rotate(0.1deg);
+  z-index: 1;
+}
+
+.static-form::after {
+  content: "";
+  position: absolute;
+  top: 4px; left: 4px; right: -4px; bottom: -4px;
+  background: var(--color-bg-subtle);
+  z-index: -1;
+}
+
+.static-form-group {
+  margin-bottom: var(--sp-xl);
+  position: relative;
+}
+
+.static-form-label {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.2em;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--sp-xs);
+  transition: color 0.3s ease;
+}
+
+/* Elegant hit area for Fitts's Law and High Contrast for WCAG */
+.static-form-input {
+  width: 100%;
+  border: 1px solid var(--color-border-dark); /* Refined dark grey for 12:1 contrast */
+  background: var(--color-bg);
+  border-radius: 0; /* Override iOS defaults for sharp Chanel edges */
+  padding: 1.25rem 1.5rem;
+  font-family: var(--font-serif);
+  font-size: var(--fs-lg);
+  color: var(--color-text);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  -webkit-appearance: none;
+}
+
+.static-form-input:focus {
+  outline: none;
+  border-color: var(--color-text);
+  box-shadow: inset 0 0 0 1px var(--color-text);
+}
+
+.static-form-input:focus + .static-form-label {
+  color: var(--color-text);
+}
+
+.static-form-btn {
+  display: block;
+  width: 100%;
+  background: var(--color-text);
+  color: var(--color-bg);
+  font-family: var(--font-sans);
+  font-size: var(--fs-base);
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  border: none;
+  padding: 1.5rem 2rem;
+  cursor: pointer;
+  transition: background 0.4s ease, transform 0.4s ease;
+  margin-top: 1rem;
+}
+
+.static-form-btn:hover {
+  background: var(--color-text-secondary);
+}
+
+/* ══════════════════════════════════════════════════════
+   RESPONSIVE
+   ══════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .static-page-wrapper {
+    padding: 3rem 0 5rem;
+  }
+  
+  .static-grid,
+  .static-form-wrapper {
+    grid-template-columns: 1fr;
+    gap: var(--sp-lg);
+  }
+  
+  .static-card:nth-child(even) {
+    transform: translateY(0) rotate(0.2deg) translateZ(0);
+  }
+  
+  .static-form-info {
+    position: static;
+  }
+}

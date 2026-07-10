@@ -1,0 +1,48 @@
+---
+import '../styles/tokens.css';
+import '../styles/global.css';
+import '../styles/pages/top.css';
+---
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Astro Phase 1 Verification</title>
+</head>
+<body class="site-body">
+  <div style="max-width: 800px; margin: 0 auto; padding: 40px 20px; font-family: sans-serif;">
+    <h1 style="border-bottom: 2px solid var(--color-ink, #1f1f1f); padding-bottom: 10px;">Astro Phase 1 動作確認ページ</h1>
+    
+    <section style="margin-top: 30px;">
+      <h2>1. Astro レンダリング確認</h2>
+      <p style="color: green; font-weight: bold;">✓ Astro ページが正常にレンダリングされ、表示されています。</p>
+    </section>
+
+    <section style="margin-top: 30px;">
+      <h2>2. コピーしたCSSの読み込み確認</h2>
+      <p>以下のボックスに、CSSトークン（`--color-ink`, `--color-bg`等）およびグローバルスタイルが正しく適用されているか確認してください。</p>
+      
+      <div style="background-color: var(--color-bg, #ffffff); color: var(--color-ink, #1f1f1f); border: 1px solid var(--line, #e5e5e5); padding: 20px; margin-top: 10px;">
+        <p><strong>CSSトークン・スタイルのテスト:</strong></p>
+        <ul>
+          <li>背景色 (var(--color-bg)): 白色 (または指定背景色)</li>
+          <li>文字色 (var(--color-ink)): 墨色 (または指定文字色)</li>
+          <li>ボーダー線 (var(--line)): 薄いグレー</li>
+        </ul>
+      </div>
+    </section>
+
+    <section style="margin-top: 30px;">
+      <h2>3. 画像アセットの表示確認</h2>
+      <p>以下の画像（`public/assets/images/hero-main.jpg` からコピーされたもの）が正常に表示されているか確認してください。</p>
+      
+      <div style="margin-top: 10px; border: 1px solid var(--line, #e5e5e5); padding: 10px; text-align: center;">
+        <img src="/assets/images/hero-main.jpg" alt="Hero Main" style="max-width: 100%; height: auto; display: block; margin: 0 auto;" />
+        <span style="font-size: 0.8rem; color: var(--color-muted, #6b6b6b); display: block; margin-top: 5px;">/assets/images/hero-main.jpg</span>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

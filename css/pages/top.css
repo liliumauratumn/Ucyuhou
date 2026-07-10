@@ -1,0 +1,547 @@
+/* ============================================================
+   TOP PAGE — css/pages/top.css
+   Page-specific styles for index.html
+   Reuters structure × CHANEL restraint
+   ============================================================ */
+
+/* ── Logo Hero ────────────────────────────────────── */
+/* ══ Protected Irregularity — Section rhythm is not uniform ══
+   visually selected — do not normalize without rerendering and comparison */
+.logo-hero {
+  padding: 5.5rem 0 3.5rem; /* was 4xl/3xl — intentionally different */
+  border-bottom: none;
+}
+
+.logo-hero__image {
+  display: block;
+  margin: 0 auto;
+  height: 400px;
+  width: auto;
+}
+
+.logo-hero__subtitle {
+  margin-top: var(--sp-xl);
+  font-family: var(--font-serif);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-regular);
+  letter-spacing: var(--ls-wide);
+  color: var(--color-text-secondary);
+  line-height: var(--lh-relaxed);
+}
+
+/* Remove top border from first section after header */
+.logo-hero.section + .section {
+  border-top: var(--border-thin);
+}
+
+/* ── Main Story (Reuters-style 3-column) ──────────── */
+/* visually selected irregularity — do not normalize without rerendering and comparison */
+.main-story {
+  padding-top: 2.75rem;  /* not a token value — visually selected */
+  padding-bottom: 3.25rem;
+}
+
+.main-story__grid {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr 0.8fr;
+  gap: var(--sp-xl);
+  align-items: start;
+}
+
+.main-story__text {
+  padding-top: var(--sp-sm);
+}
+
+.main-story__title {
+  font-family: var(--font-sans);
+  font-size: var(--fs-3xl);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-tight);
+  margin: var(--sp-sm) 0 var(--sp-md);
+}
+
+.main-story__title a {
+  color: var(--color-text);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.main-story__title a:hover {
+  color: var(--color-text-secondary);
+}
+
+.main-story__excerpt {
+  font-family: var(--font-serif);
+  font-size: var(--fs-base);
+  color: var(--color-text-secondary);
+  line-height: var(--lh-relaxed);
+  margin-bottom: var(--sp-md);
+}
+
+.main-story__image {
+  overflow: hidden;
+  background: var(--color-bg-subtle);
+}
+
+.main-story__image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  /* visually selected irregularity — do not normalize without rerendering and comparison */
+  object-position: 42% 35%;
+  transition: transform var(--transition-slow);
+}
+
+.main-story__image a:hover img {
+  transform: scale(1.02);
+}
+
+.main-story__sidebar {
+  /* 罫線を廃止し、ノイズによる配置の揺らぎで境界を作る */
+  padding-left: 0;
+  margin-left: -1rem; /* 全体を画像側へ引き寄せ、マウス移動距離を短縮 */
+}
+
+.main-story__sidebar-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.main-story__sidebar-item {
+  border-bottom: var(--border-thin);
+  transition: transform var(--transition-base), background var(--transition-fast);
+}
+
+/* ══ Protected Irregularity — Sidebar List Noise ══
+   visually selected irregularity — do not normalize without rerendering and comparison
+   マウス移動距離の短縮（Fitts's Law）と非均一性を両立するオフセット */
+.main-story__sidebar-item:nth-child(4n+1) { transform: translateX(-12px); padding: 1rem 0.5rem 1rem 1rem; }
+.main-story__sidebar-item:nth-child(4n+2) { transform: translateX(-4px); padding: 1.25rem 0.5rem 0.875rem 0.75rem; }
+.main-story__sidebar-item:nth-child(4n+3) { transform: translateX(-16px); padding: 0.875rem 0.5rem 1.125rem 1.25rem; }
+.main-story__sidebar-item:nth-child(4n+4) { transform: translateX(-8px); padding: 1.125rem 0.5rem 1rem 0.875rem; }
+
+.main-story__sidebar-item:last-child {
+  border-bottom: none;
+}
+
+.main-story__sidebar-item a {
+  display: block;
+  color: var(--color-text);
+  /* リンクのヒットエリアを拡大 */
+  width: 100%;
+  height: 100%;
+}
+
+/* Hover Personalities */
+.main-story__sidebar-item:nth-child(4n+1):hover { transform: translateX(-16px) scale(1.01); background: var(--color-bg-subtle); }
+.main-story__sidebar-item:nth-child(4n+2):hover { transform: translateX(-8px) translateY(-2px); background: var(--color-bg-subtle); }
+.main-story__sidebar-item:nth-child(4n+3):hover { transform: translateX(-18px) rotate(-0.3deg); background: var(--color-bg-subtle); }
+.main-story__sidebar-item:nth-child(4n+4):hover { transform: translateX(-12px) scale(1.005); background: var(--color-bg-subtle); }
+
+.main-story__sidebar-title {
+  font-family: var(--font-sans);
+  font-size: var(--fs-base);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-normal);
+  margin-bottom: var(--sp-xs);
+  transition: color var(--transition-fast);
+}
+
+.main-story__sidebar-item a:hover .main-story__sidebar-title {
+  color: var(--color-text-secondary);
+}
+
+/* Sub stories below main */
+.main-story__sub {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-xl);
+  margin-top: var(--sp-xl);
+  padding-top: var(--sp-xl);
+  border-top: var(--border-thin);
+}
+
+.main-story__sub .article-card__title {
+  font-size: var(--fs-lg);
+}
+
+.main-story__sub .article-card__image-wrap {
+  aspect-ratio: 16 / 9;
+}
+
+/* visually selected irregularity — sub-story crops are not identical */
+.main-story__sub .article-card:first-child .article-card__image-wrap img {
+  object-position: 55% 40%;
+}
+.main-story__sub .article-card:last-child .article-card__image-wrap img {
+  object-position: 40% 60%;
+}
+
+/* ── Latest Articles ──────────────────────────────── */
+/* visually selected irregularity — do not normalize without rerendering and comparison */
+.latest-articles {
+  padding-top: 3.5rem;
+  padding-bottom: 2.5rem;
+}
+
+.latest-articles__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4px; /* 極小の隙間。物理的に切り離しつつ、視覚的には1つのテーブルの塊を維持する */
+  /* 必須ノイズ: 隙間の分だけ左右にわずかに飛び出させる（雑誌的な崩し） */
+  width: calc(100% + 12px);
+  margin-left: -6px;
+}
+
+.latest-articles__item {
+  position: relative;
+  border: none;
+  z-index: 1;
+  /* 親要素のz-index降下を遅らせ、マウスアウト時の「奥への潜り込みによるちらつき」を防止 */
+  transition: z-index 0s linear var(--dur-a);
+}
+
+.latest-articles__item:hover {
+  z-index: 10;
+  transition-delay: 0s;
+}
+
+/* Protected irregularity — cell rhythm is not uniform
+   Fitts's Law: 隙間が小さくても、リンク要素自体にpaddingを持たせて面全体を確実にクリック可能にする */
+.latest-articles__item:nth-child(4n+1) a { padding: 1.375rem 1.5rem; }
+.latest-articles__item:nth-child(4n+2) a { padding: 1.5rem 1.25rem; }
+.latest-articles__item:nth-child(4n+3) a { padding: 1.25rem 1.625rem; }
+.latest-articles__item:nth-child(4n+4) a { padding: 1.5rem 1.375rem; }
+
+/* 枠線を疑似要素で描き、必須ノイズを加える */
+.latest-articles__item::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  border: 1px solid var(--color-border);
+  pointer-events: none;
+  z-index: 0;
+  /* サブピクセルレンダリングの干渉（ちらつき）を防ぐハードウェアアクセラレーション */
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  will-change: transform, border-color, box-shadow;
+  transition: transform var(--dur-a) var(--ease-a), border-color var(--dur-a) var(--ease-a), border-width var(--dur-a) var(--ease-a), box-shadow var(--dur-a) var(--ease-a), background var(--dur-a) var(--ease-a);
+}
+
+/* ══ Protected Irregularity — Grid Line Noise ══
+   均一な罫線を破壊し、手書きのようなズレと重なりを生む */
+.latest-articles__item:nth-child(4n+1)::before { transform: rotate(-0.4deg) scale(1.02) translateZ(0); border-width: 1px 2px 1px 1px; }
+.latest-articles__item:nth-child(4n+2)::before { transform: rotate(0.3deg) scale(0.98) translateZ(0); border-width: 1px 1px 2px 1px; }
+.latest-articles__item:nth-child(4n+3)::before { transform: rotate(-0.2deg) scale(1.01) translateZ(0); border-width: 2px 1px 1px 1px; }
+.latest-articles__item:nth-child(4n+4)::before { transform: rotate(0.5deg) scale(0.99) translateZ(0); border-width: 1px 1px 1px 2px; }
+
+/* 鋭い「最新」のインタラクション：ホバー時にノイズが消え、スナップしてフォーカスされる */
+.latest-articles__item:hover::before {
+  border-color: var(--color-text);
+  border-width: 2px;
+  transform: scale(1) rotate(0deg) translateZ(0);
+  background: var(--color-bg-subtle);
+  box-shadow: 4px 4px 0 rgba(0,0,0,0.04);
+}
+
+.latest-articles__item a {
+  position: relative;
+  z-index: 2; /* 疑似要素の上に乗せる */
+  display: flex; /* Link hit area fix */
+  flex-direction: column;
+  color: var(--color-text);
+  height: 100%;
+}
+
+.latest-articles__title {
+  font-family: var(--font-sans);
+  font-size: var(--fs-base);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-normal);
+  letter-spacing: 0;
+  margin-bottom: var(--sp-sm);
+}
+
+.latest-articles__item .article-card__time {
+  margin-top: var(--sp-sm);
+}
+
+/* ── Recommended ──────────────────────────────────── */
+/* visually selected irregularity — do not normalize without rerendering and comparison */
+.recommended {
+  padding-top: 2.25rem;
+  padding-bottom: 3.75rem;
+}
+
+.recommended__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--sp-xl);
+}
+
+/* ── Feature ──────────────────────────────────────── */
+/* visually selected irregularity — do not normalize without rerendering and comparison */
+.feature {
+  padding-top: 3rem;
+  padding-bottom: 2.75rem;
+}
+
+.feature__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-xl);
+}
+
+/* ── Newsletter ───────────────────────────────────── */
+/* visually selected irregularity — do not normalize without rerendering and comparison */
+.newsletter {
+  padding: 4.5rem 0 3.25rem; /* asymmetric top/bottom */
+}
+
+.newsletter__title {
+  font-family: var(--font-sans);
+  font-size: var(--fs-xl);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--ls-widest);
+  margin-bottom: var(--sp-lg);
+  /* visually selected irregularity — do not normalize without rerendering and comparison */
+  margin-left: 3px;
+}
+
+.newsletter__subtitle {
+  font-family: var(--font-serif);
+  font-size: var(--fs-sm);
+  color: var(--color-text-secondary);
+  line-height: var(--lh-relaxed);
+  max-width: var(--max-width-narrow);
+  margin: 0 auto var(--sp-xl);
+}
+
+.newsletter__form {
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.newsletter__input-group {
+  display: flex;
+  height: 100px;
+  border: 1px solid var(--color-border);
+  background: var(--color-bg);
+  padding: 2px;
+  align-items: stretch;
+}
+
+.newsletter__input {
+  flex: 1;
+  border: none;
+  background: transparent;
+}
+
+.newsletter__input:focus {
+  outline: none;
+  border: none;
+  background: var(--color-bg-subtle);
+}
+
+.newsletter__btn {
+  flex-shrink: 0;
+  width: 56px;
+  background: var(--color-text);
+  color: var(--color-bg);
+  font-family: var(--font-sans);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+  cursor: pointer;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  letter-spacing: 0.1em;
+  padding: 0;
+  transition: background var(--transition-fast), color var(--transition-fast);
+  border: none;
+}
+
+.newsletter__btn:hover {
+  background: var(--color-text-secondary);
+  color: var(--color-bg);
+}
+
+/* ══════════════════════════════════════════════════════
+   RESPONSIVE — ≤ 1024px (Tablet landscape)
+   ══════════════════════════════════════════════════════ */
+@media (max-width: 1024px) {
+  .main-story__grid {
+    grid-template-columns: 1fr 1.4fr;
+  }
+
+  .main-story__sidebar {
+    display: none;
+  }
+
+  .recommended__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ══════════════════════════════════════════════════════
+   RESPONSIVE — ≤ 768px (Tablet portrait & Mobile)
+   ══════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  /* Logo Hero */
+  .logo-hero {
+    padding: var(--sp-3xl) 0 var(--sp-2xl);
+  }
+
+  .logo-hero__image {
+    height: 240px;
+  }
+
+  .logo-hero__subtitle {
+    font-size: var(--fs-xs);
+  }
+
+  /* Main Story */
+  .main-story__grid {
+    grid-template-columns: 1fr;
+    gap: var(--sp-lg);
+  }
+
+  /* Image first on mobile */
+  .main-story__image {
+    order: -1;
+  }
+
+  .main-story__title {
+    font-size: var(--fs-xl);
+  }
+
+  /* Sub stories */
+  .main-story__sub {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--sp-lg);
+  }
+
+  /* Latest Articles */
+  .latest-articles__grid {
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+    margin-left: 0;
+  }
+
+  /* Reset top border for mobile 2-column */
+  .latest-articles__item:nth-child(-n+4) {
+    border-top: none;
+  }
+
+  .latest-articles__item:nth-child(-n+2) {
+    border-top: var(--border-thin);
+  }
+
+  /* Reset right border for mobile 2-column */
+  .latest-articles__item:nth-child(4n) {
+    border-right: var(--border-thin);
+  }
+
+  .latest-articles__item:nth-child(2n) {
+    border-right: none;
+  }
+
+  /* Recommended */
+  .recommended__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-lg);
+  }
+
+  /* Feature */
+  .feature__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-lg);
+  }
+
+  /* Let the last card span full if odd */
+  .feature__grid .article-card:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+  }
+
+  /* Newsletter */
+  .newsletter {
+    padding: var(--sp-3xl) 0;
+  }
+
+  .newsletter__input-group {
+    flex-direction: column;
+    gap: var(--sp-sm);
+    height: auto;
+    border: none;
+    padding: 0;
+    background: transparent;
+  }
+
+  .newsletter__input {
+    border: 1px solid var(--color-border);
+    height: 56px;
+    background: var(--color-bg);
+  }
+
+  .newsletter__input:focus {
+    border: 1px solid var(--color-text);
+  }
+  
+  .newsletter__btn {
+    writing-mode: horizontal-tb;
+    width: 100%;
+    height: 56px;
+    letter-spacing: var(--ls-wide);
+  }
+}
+
+/* ══════════════════════════════════════════════════════
+   RESPONSIVE — ≤ 390px (Small Mobile)
+   ══════════════════════════════════════════════════════ */
+@media (max-width: 390px) {
+  /* Logo Hero */
+  .logo-hero {
+    padding: var(--sp-2xl) 0 var(--sp-xl);
+  }
+
+  .logo-hero__image {
+    height: 160px;
+  }
+
+  /* Main Story sub */
+  .main-story__sub {
+    grid-template-columns: 1fr;
+  }
+
+  /* Latest Articles → single column */
+  .latest-articles__grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Reset all border overrides for single column */
+  .latest-articles__item,
+  .latest-articles__item:nth-child(-n+4),
+  .latest-articles__item:nth-child(-n+2),
+  .latest-articles__item:nth-child(4n),
+  .latest-articles__item:nth-child(2n) {
+    border-right: none;
+    border-top: none;
+  }
+
+  .latest-articles__item:first-child {
+    border-top: var(--border-thin);
+  }
+
+  /* Cards → single column */
+  .recommended__grid,
+  .feature__grid {
+    grid-template-columns: 1fr;
+  }
+}
