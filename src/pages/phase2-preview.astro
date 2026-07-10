@@ -1,0 +1,78 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import ArticleCard from '../components/ArticleCard.astro';
+import NewsletterBlock from '../components/NewsletterBlock.astro';
+
+// top.css is imported to apply recommended__grid layout styles
+import '../styles/pages/top.css';
+
+// previewArticles uses only valid article details with linkEnabled set to false
+const previewArticles = [
+  {
+    title: "悟りとは、特別な境地ではない",
+    href: "/articles/satori/",
+    category: "悟り",
+    image: "/assets/images/hero-main.jpg",
+    excerpt: "エックハルト・トール、ブッダ、非二元の教えに共通する「自己の見誤りの終了」を読む。",
+    publishedAt: "2026-07-09",
+    publishedLabel: "2026年7月9日"
+  },
+  {
+    title: "願うほど遠ざかる理由——引き寄せの「抵抗」を再読する",
+    href: "/articles/hikiyose/",
+    category: "引き寄せ",
+    image: "/assets/images/card-water.jpg",
+    excerpt: "エイブラハムの「許可する」とは何を許すことなのか。執着が引き寄せる「欠乏」の周波数。",
+    publishedAt: "2026-07-09",
+    publishedLabel: "2026年7月9日"
+  },
+  {
+    title: "宇宙通信・創刊号——意識の多次元的な構造と未来への架け橋",
+    href: "/articles/tsushin/",
+    category: "宇宙通信",
+    image: "/assets/images/card-water.jpg",
+    excerpt: "私たちの思考はどこからやってくるのか。個人的なマインドを超えた「大いなる源泉（ソース）」からの通信ログ。",
+    publishedAt: "2026-07-09",
+    publishedLabel: "2026年7月9日"
+  }
+];
+---
+<BaseLayout title="Phase 2 プレビュー | 宇宙を悟り法則を引き寄せる" description="Phase 2 の共通コンポーネント表示確認用ページ">
+  <SiteHeader navigationEnabled={false} searchEnabled={false} />
+  
+  <main style="padding-top: var(--sp-2xl); padding-bottom: var(--sp-3xl);">
+    <div class="site-container">
+      <header style="margin-bottom: var(--sp-3xl); text-align: center; border-bottom: 2px solid var(--color-border); padding-bottom: var(--sp-lg);">
+        <h1 style="font-size: var(--fs-3xl); font-family: var(--font-sans); margin-bottom: 0;">Phase 2 コンポーネント検証</h1>
+        <p style="color: var(--color-text-secondary); margin-top: var(--sp-xs); font-family: var(--font-serif);">BaseLayout / SiteHeader / SiteFooter / ArticleCard / NewsletterBlock</p>
+      </header>
+
+      <section class="section" style="border-top: none; padding-top: 0;">
+        <h2 class="section-title">ArticleCard 検証</h2>
+        <div class="recommended__grid">
+          {previewArticles.map((article) => (
+            <ArticleCard
+              title={article.title}
+              href={article.href}
+              category={article.category}
+              image={article.image}
+              excerpt={article.excerpt}
+              publishedAt={article.publishedAt}
+              publishedLabel={article.publishedLabel}
+              linkEnabled={false}
+            />
+          ))}
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title">NewsletterBlock 検証</h2>
+        <NewsletterBlock />
+      </section>
+    </div>
+  </main>
+
+  <SiteFooter />
+</BaseLayout>

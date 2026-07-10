@@ -1,0 +1,81 @@
+---
+interface Props {
+  activeSection?: string;
+  navigationEnabled?: boolean;
+  searchEnabled?: boolean;
+}
+
+const { activeSection, navigationEnabled = true, searchEnabled = false } = Astro.props;
+
+const categories = [
+  { slug: 'satori', name: '悟り' },
+  { slug: 'hikiyose', name: '引き寄せ' },
+  { slug: 'law', name: '宇宙の法則' },
+  { slug: 'mezame', name: '目覚め' },
+  { slug: 'bunsho', name: '文書' },
+  { slug: 'jissen', name: '実践' },
+  { slug: 'kakera', name: '思考の欠片' },
+  { slug: 'tsushin', name: '宇宙通信' },
+];
+---
+<header class="site-header" id="site-header">
+  <div class="header-top-bar">
+    {navigationEnabled ? (
+      <a href="/" class="header-site-title">宇宙を悟り法則を引き寄せる</a>
+    ) : (
+      <span class="header-site-title" style="cursor: default;">宇宙を悟り法則を引き寄せる</span>
+    )}
+  </div>
+
+  <nav class="header-nav-bar" aria-label="メインナビゲーション">
+    <div class="header-nav-inner">
+      <ul class="header-nav-list" id="nav-list">
+        {categories.map((category) => (
+          <li>
+            {navigationEnabled ? (
+              <a
+                href={`/category/${category.slug}/`}
+                class={activeSection === category.slug ? 'active' : ''}
+                aria-current={activeSection === category.slug ? 'page' : undefined}
+              >
+                {category.name}
+              </a>
+            ) : (
+              <a
+                class={activeSection === category.slug ? 'active' : ''}
+                aria-current={activeSection === category.slug ? 'page' : undefined}
+                style="pointer-events: none; cursor: default; color: var(--color-text);"
+                tabindex="-1"
+              >
+                {category.name}
+              </a>
+            )}
+          </li>
+        ))}
+      </ul>
+
+      {searchEnabled ? (
+        <button class="header-search-btn" aria-label="検索">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="7"/>
+            <line x1="16.5" y1="16.5" x2="21" y2="21"/>
+          </svg>
+        </button>
+      ) : (
+        <button
+          type="button"
+          class="header-search-btn"
+          disabled
+          aria-disabled="true"
+          aria-label="検索（準備中）"
+          style="opacity: 0.4; cursor: not-allowed;"
+        >
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="7"/>
+            <line x1="16.5" y1="16.5" x2="21" y2="21"/>
+          </svg>
+        </button>
+      )}
+    </div>
+  </nav>
+</header>

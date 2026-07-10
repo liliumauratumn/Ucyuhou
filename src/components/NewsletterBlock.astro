@@ -1,0 +1,45 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+  statusText?: string;
+}
+
+const {
+  title = "宇宙通信",
+  description = "悟り、引き寄せ、意識、宇宙法則についての短い便り。\n記事になる前の断章が、宇宙から届きます。",
+  statusText = "※現在準備中です"
+} = Astro.props;
+---
+<section class="section newsletter" id="newsletter">
+  <div class="site-container text-center">
+    <h2 class="newsletter__title">{title}</h2>
+    {statusText && (
+      <p class="newsletter__status" style="color:#d9534f; font-size:var(--fs-xs); margin-top:var(--sp-xs); font-weight:bold;">
+        {statusText}
+      </p>
+    )}
+    <p class="newsletter__subtitle">
+      {description.split('\n').map((line, index, arr) => (
+        <Fragment key={index}>
+          {line}
+          {index < arr.length - 1 && <br />}
+        </Fragment>
+      ))}
+    </p>
+    <div class="newsletter__form">
+      <div class="newsletter__input-group">
+        <input
+          type="email"
+          class="input newsletter__input"
+          placeholder="メールアドレス"
+          aria-label="メールアドレス"
+          disabled
+        />
+        <button type="button" class="btn newsletter__btn" disabled style="opacity: 0.6; cursor: not-allowed;">
+          準備中
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
