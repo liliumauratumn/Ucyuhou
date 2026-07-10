@@ -1,0 +1,36 @@
+---
+// StaticLayout.astro
+// Layout component for static pages (About, Contact, Privacy, Terms)
+import BaseLayout from './BaseLayout.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import '../styles/pages/static-page.css';
+
+interface Props {
+  title: string;
+  description: string;
+  pageTitle: string;
+  englishLabel: string;
+  bodyClass?: string;
+}
+
+const { title, description, pageTitle, englishLabel, bodyClass } = Astro.props;
+---
+<BaseLayout title={title} description={description} bodyClass={bodyClass}>
+  <SiteHeader navigationEnabled={true} searchEnabled={true} />
+
+  <main>
+    <div class="site-container">
+      <div class="static-page-wrapper">
+        <header class="static-hero">
+          <div class="static-english-label">{englishLabel}</div>
+          <h1 class="static-title">{pageTitle}</h1>
+        </header>
+
+        <slot />
+      </div>
+    </div>
+  </main>
+
+  <SiteFooter categoryLinksEnabled={true} staticLinksEnabled={true} />
+</BaseLayout>

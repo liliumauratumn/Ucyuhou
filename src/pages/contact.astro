@@ -1,0 +1,33 @@
+---
+// contact.astro
+import StaticLayout from '../layouts/StaticLayout.astro';
+---
+<StaticLayout
+  title="問い合わせ | 宇宙を悟り法則を引き寄せる"
+  description="宇宙を悟り法則を引き寄せる（うちゅ法）への問い合わせ窓口。"
+  pageTitle="問い合わせ"
+  englishLabel="CONTACT"
+>
+  <div class="static-form-wrapper">
+    <div class="static-form-info">
+      <p style="font-family: var(--font-serif); font-size: var(--fs-base); color: var(--color-text-secondary); line-height: var(--lh-relaxed);">
+        現在、専用の通信回路は準備中です。<br />稼働を開始するまで、もうしばらくお待ちください。
+      </p>
+    </div>
+    <div class="static-form">
+      <div class="static-form-group">
+        <label for="name" class="static-form-label">お名前</label>
+        <input type="text" class="static-form-input" id="name" placeholder=" " disabled />
+      </div>
+      <div class="static-form-group">
+        <label for="email" class="static-form-label">メールアドレス</label>
+        <input type="email" class="static-form-input" id="email" placeholder=" " disabled />
+      </div>
+      <div class="static-form-group">
+        <label for="message" class="static-form-label">メッセージ</label>
+        <textarea class="static-form-input" id="message" rows="4" placeholder=" " disabled></textarea>
+      </div>
+      <button type="button" class="static-form-btn" disabled aria-disabled="true">送信する</button>
+    </div>
+  </div>
+</StaticLayout>

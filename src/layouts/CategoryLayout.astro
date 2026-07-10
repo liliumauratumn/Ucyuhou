@@ -29,7 +29,7 @@ const featuredArticle = hasArticles ? articles[0] : null;
 const gridArticles = hasArticles ? articles.slice(1) : [];
 ---
 <BaseLayout title={`${categoryName} | 宇宙を悟り法則を引き寄せる`} description={categoryDescription} bodyClass={bodyClass}>
-  <SiteHeader activeSection={categorySlug} navigationEnabled={true} searchEnabled={false} />
+  <SiteHeader activeSection={categorySlug} navigationEnabled={true} searchEnabled={true} />
 
   <main>
     <div class="site-container">
@@ -159,5 +159,5 @@ const gridArticles = hasArticles ? articles.slice(1) : [];
     </div>
   </main>
 
-  <SiteFooter categoryLinksEnabled={true} staticLinksEnabled={false} />
+  <SiteFooter categoryLinksEnabled={true} staticLinksEnabled={true} />
 </BaseLayout>

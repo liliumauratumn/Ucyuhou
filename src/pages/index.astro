@@ -1,48 +1,329 @@
 ---
-import '../styles/tokens.css';
-import '../styles/global.css';
+// index.astro - Official Top Page
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import ArticleCard from '../components/ArticleCard.astro';
+import { getCollection } from 'astro:content';
 import '../styles/pages/top.css';
+
+const allArticles = await getCollection('articles');
+
+// Map articles by slug for quick lookup
+const articlesBySlug = new Map(allArticles.map(a => [a.data.slug, a]));
+
+const getArticle = (slug: string) => {
+  const art = articlesBySlug.get(slug);
+  if (!art) {
+    throw new Error(`Article with slug "${slug}" not found in Content Collections.`);
+  }
+  return art;
+};
+
+// Main Story
+const mainStory = getArticle('satori');
+const sidebar1 = getArticle('bunsho');
+const sidebar2 = getArticle('maharshi');
+const sidebar3 = getArticle('law');
+const sidebar4 = getArticle('quantum');
+const sub1 = getArticle('hikiyose');
+const sub2 = getArticle('emerald');
+
+// Latest Articles
+const latest1 = getArticle('abraham');
+const latest2 = getArticle('emerald');
+const latest3 = getArticle('desire');
+const latest4 = getArticle('narrow');
+const latest5 = getArticle('buddha');
+const latest6 = getArticle('mezame');
+const latest7 = getArticle('scale');
+const latest8 = getArticle('allowed');
+
+// Recommended
+const rec1 = getArticle('tolle');
+const rec2 = getArticle('hikiyose');
+const rec3 = getArticle('mirror');
+const rec4 = getArticle('emerald-prep');
+
+// Feature
+const feat1 = getArticle('discard');
+const feat2 = getArticle('no-resistance');
+const feat3 = getArticle('vortex');
 ---
+<BaseLayout title="宇宙を悟り法則を引き寄せる | うちゅ法" description="悟り、引き寄せ、宇宙法則、覚者の教えを静かに読み解く思想メディア。">
+  <SiteHeader navigationEnabled={true} searchEnabled={true} />
 
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Astro Phase 1 Verification</title>
-</head>
-<body class="site-body">
-  <div style="max-width: 800px; margin: 0 auto; padding: 40px 20px; font-family: sans-serif;">
-    <h1 style="border-bottom: 2px solid var(--color-ink, #1f1f1f); padding-bottom: 10px;">Astro Phase 1 動作確認ページ</h1>
+  <main>
+    <h1 class="visually-hidden">宇宙を悟り法則を引き寄せる</h1>
     
-    <section style="margin-top: 30px;">
-      <h2>1. Astro レンダリング確認</h2>
-      <p style="color: green; font-weight: bold;">✓ Astro ページが正常にレンダリングされ、表示されています。</p>
-    </section>
-
-    <section style="margin-top: 30px;">
-      <h2>2. コピーしたCSSの読み込み確認</h2>
-      <p>以下のボックスに、CSSトークン（`--color-ink`, `--color-bg`等）およびグローバルスタイルが正しく適用されているか確認してください。</p>
-      
-      <div style="background-color: var(--color-bg, #ffffff); color: var(--color-ink, #1f1f1f); border: 1px solid var(--line, #e5e5e5); padding: 20px; margin-top: 10px;">
-        <p><strong>CSSトークン・スタイルのテスト:</strong></p>
-        <ul>
-          <li>背景色 (var(--color-bg)): 白色 (または指定背景色)</li>
-          <li>文字色 (var(--color-ink)): 墨色 (または指定文字色)</li>
-          <li>ボーダー線 (var(--line)): 薄いグレー</li>
-        </ul>
+    <!-- ═══════════════════════════════════════════════
+         LOGO HERO
+         ═══════════════════════════════════════════════ -->
+    <section class="section logo-hero" id="logo-hero">
+      <div class="site-container text-center">
+        <img
+          class="logo-hero__image"
+          src="/assets/images/Ucyuhou_bk.png"
+          alt="うちゅ法"
+          width="800"
+          height="800"
+        />
+        <p class="logo-hero__subtitle">悟り、引き寄せ、宇宙法則を静かに読み解く</p>
       </div>
     </section>
 
-    <section style="margin-top: 30px;">
-      <h2>3. 画像アセットの表示確認</h2>
-      <p>以下の画像（`public/assets/images/hero-main.jpg` からコピーされたもの）が正常に表示されているか確認してください。</p>
-      
-      <div style="margin-top: 10px; border: 1px solid var(--line, #e5e5e5); padding: 10px; text-align: center;">
-        <img src="/assets/images/hero-main.jpg" alt="Hero Main" style="max-width: 100%; height: auto; display: block; margin: 0 auto;" />
-        <span style="font-size: 0.8rem; color: var(--color-muted, #6b6b6b); display: block; margin-top: 5px;">/assets/images/hero-main.jpg</span>
+    <!-- ═══════════════════════════════════════════════
+         MAIN STORY
+         ═══════════════════════════════════════════════ -->
+    <section class="section main-story" id="main-story">
+      <div class="site-container">
+        <div class="main-story__grid">
+          <!-- Left: Text -->
+          <article class="main-story__text">
+            <span class="article-card__category">{mainStory.data.category}</span>
+            <h2 class="main-story__title">
+              <a href={`/articles/${mainStory.data.slug}/`}>{mainStory.data.title}</a>
+            </h2>
+            <p class="main-story__excerpt">
+              {mainStory.data.description}
+            </p>
+            <time class="article-card__time" datetime={mainStory.data.publishedAt}>
+              {mainStory.data.publishedLabel}
+            </time>
+          </article>
+
+          <!-- Center: Image -->
+          <div class="main-story__image">
+            <a href={`/articles/${mainStory.data.slug}/`}>
+              <img src={mainStory.data.heroImage} alt={mainStory.data.heroAlt} width="800" height="500" loading="eager" />
+            </a>
+          </div>
+
+          <!-- Right: Headline sidebar (Reuters pattern) -->
+          <aside class="main-story__sidebar" aria-label="関連記事">
+            <ul class="main-story__sidebar-list">
+              <li class="main-story__sidebar-item">
+                <a href={`/articles/${sidebar1.data.slug}/`}>
+                  <h3 class="main-story__sidebar-title">{sidebar1.data.title}</h3>
+                  <time class="article-card__time" datetime={sidebar1.data.publishedAt}>{sidebar1.data.publishedLabel}</time>
+                </a>
+              </li>
+              <li class="main-story__sidebar-item">
+                <a href={`/articles/${sidebar2.data.slug}/`}>
+                  <h3 class="main-story__sidebar-title">{sidebar2.data.title}</h3>
+                  <time class="article-card__time" datetime={sidebar2.data.publishedAt}>{sidebar2.data.publishedLabel}</time>
+                </a>
+              </li>
+              <li class="main-story__sidebar-item">
+                <a href={`/articles/${sidebar3.data.slug}/`}>
+                  <h3 class="main-story__sidebar-title">{sidebar3.data.title}</h3>
+                  <time class="article-card__time" datetime={sidebar3.data.publishedAt}>{sidebar3.data.publishedLabel}</time>
+                </a>
+              </li>
+              <li class="main-story__sidebar-item">
+                <a href={`/articles/${sidebar4.data.slug}/`}>
+                  <h3 class="main-story__sidebar-title">{sidebar4.data.title}</h3>
+                  <time class="article-card__time" datetime={sidebar4.data.publishedAt}>{sidebar4.data.publishedLabel}</time>
+                </a>
+              </li>
+            </ul>
+          </aside>
+        </div>
+
+        <!-- Sub stories -->
+        <div class="main-story__sub">
+          <article class="article-card">
+            <a href={`/articles/${sub1.data.slug}/`}>
+              <div class="article-card__image-wrap">
+                <img src={sub1.data.heroImage} alt={sub1.data.heroAlt} width="600" height="375" loading="lazy" />
+              </div>
+              <span class="article-card__category">{sub1.data.category}</span>
+              <h3 class="article-card__title">{sub1.data.title}</h3>
+              <time class="article-card__time" datetime={sub1.data.publishedAt}>{sub1.data.publishedLabel}</time>
+            </a>
+          </article>
+          <article class="article-card">
+            <a href={`/articles/${sub2.data.slug}/`}>
+              <div class="article-card__image-wrap">
+                <img src={sub2.data.heroImage} alt={sub2.data.heroAlt} width="600" height="375" loading="lazy" />
+              </div>
+              <span class="article-card__category">{sub2.data.category}</span>
+              <h3 class="article-card__title">{sub2.data.title}</h3>
+              <time class="article-card__time" datetime={sub2.data.publishedAt}>{sub2.data.publishedLabel}</time>
+            </a>
+          </article>
+        </div>
       </div>
     </section>
-  </div>
-</body>
-</html>
+
+    <!-- ═══════════════════════════════════════════════
+         LATEST ARTICLES
+         ═══════════════════════════════════════════════ -->
+    <section class="section latest-articles" id="latest-articles">
+      <div class="site-container">
+        <h2 class="section-title"><a href="#latest-articles">最新記事 &rsaquo;</a></h2>
+        <div class="latest-articles__grid">
+          <article class="latest-articles__item">
+            <a href={`/articles/${latest1.data.slug}/`}>
+              <h3 class="latest-articles__title">{latest1.data.title}</h3>
+              <time class="article-card__time" datetime={latest1.data.publishedAt}>{latest1.data.publishedLabel}</time>
+            </a>
+          </article>
+          <article class="latest-articles__item">
+            <a href={`/articles/${latest2.data.slug}/`}>
+              <h3 class="latest-articles__title">{latest2.data.title}</h3>
+              <time class="article-card__time" datetime={latest2.data.publishedAt}>{latest2.data.publishedLabel}</time>
+            </a>
+          </article>
+          <article class="latest-articles__item">
+            <a href={`/articles/${latest3.data.slug}/`}>
+              <h3 class="latest-articles__title">{latest3.data.title}</h3>
+              <time class="article-card__time" datetime={latest3.data.publishedAt}>{latest3.data.publishedLabel}</time>
+            </a>
+          </article>
+          <article class="latest-articles__item">
+            <a href={`/articles/${latest4.data.slug}/`}>
+              <h3 class="latest-articles__title">{latest4.data.title}</h3>
+              <time class="article-card__time" datetime={latest4.data.publishedAt}>{latest4.data.publishedLabel}</time>
+            </a>
+          </article>
+          <article class="latest-articles__item">
+            <a href={`/articles/${latest5.data.slug}/`}>
+              <h3 class="latest-articles__title">{latest5.data.title}</h3>
+              <time class="article-card__time" datetime={latest5.data.publishedAt}>{latest5.data.publishedLabel}</time>
+            </a>
+          </article>
+          <article class="latest-articles__item">
+            <a href={`/articles/${latest6.data.slug}/`}>
+              <h3 class="latest-articles__title">{latest6.data.title}</h3>
+              <time class="article-card__time" datetime={latest6.data.publishedAt}>{latest6.data.publishedLabel}</time>
+            </a>
+          </article>
+          <article class="latest-articles__item">
+            <a href={`/articles/${latest7.data.slug}/`}>
+              <h3 class="latest-articles__title">{latest7.data.title}</h3>
+              <time class="article-card__time" datetime={latest7.data.publishedAt}>{latest7.data.publishedLabel}</time>
+            </a>
+          </article>
+          <article class="latest-articles__item">
+            <a href={`/articles/${latest8.data.slug}/`}>
+              <h3 class="latest-articles__title">{latest8.data.title}</h3>
+              <time class="article-card__time" datetime={latest8.data.publishedAt}>{latest8.data.publishedLabel}</time>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         RECOMMENDED
+         ═══════════════════════════════════════════════ -->
+    <section class="section recommended" id="recommended">
+      <div class="site-container">
+        <h2 class="section-title">宇宙からのおすすめ</h2>
+        <div class="recommended__grid">
+          <ArticleCard
+            title={rec1.data.title}
+            href={`/articles/${rec1.data.slug}/`}
+            category={rec1.data.category}
+            image={rec1.data.heroImage}
+            publishedAt={rec1.data.publishedAt}
+            publishedLabel={rec1.data.publishedLabel}
+          />
+          <ArticleCard
+            title={rec2.data.title}
+            href={`/articles/${rec2.data.slug}/`}
+            category={rec2.data.category}
+            image={rec2.data.heroImage}
+            publishedAt={rec2.data.publishedAt}
+            publishedLabel={rec2.data.publishedLabel}
+          />
+          <ArticleCard
+            title={rec3.data.title}
+            href={`/articles/${rec3.data.slug}/`}
+            category={rec3.data.category}
+            image={rec3.data.heroImage}
+            publishedAt={rec3.data.publishedAt}
+            publishedLabel={rec3.data.publishedLabel}
+          />
+          <ArticleCard
+            title={rec4.data.title}
+            href={`/articles/${rec4.data.slug}/`}
+            category={rec4.data.category}
+            image={rec4.data.heroImage}
+            publishedAt={rec4.data.publishedAt}
+            publishedLabel={rec4.data.publishedLabel}
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         FEATURE
+         ═══════════════════════════════════════════════ -->
+    <section class="section feature" id="feature">
+      <div class="site-container">
+        <h2 class="section-title">特集: 引き寄せを欲望から解放する</h2>
+        <div class="feature__grid">
+          <ArticleCard
+            title={feat1.data.title}
+            href={`/articles/${feat1.data.slug}/`}
+            category={feat1.data.category}
+            image={feat1.data.heroImage}
+            excerpt={feat1.data.description}
+            publishedAt={feat1.data.publishedAt}
+            publishedLabel={feat1.data.publishedLabel}
+          />
+          <ArticleCard
+            title={feat2.data.title}
+            href={`/articles/${feat2.data.slug}/`}
+            category={feat2.data.category}
+            image={feat2.data.heroImage}
+            excerpt={feat2.data.description}
+            publishedAt={feat2.data.publishedAt}
+            publishedLabel={feat2.data.publishedLabel}
+          />
+          <ArticleCard
+            title={feat3.data.title}
+            href={`/articles/${feat3.data.slug}/`}
+            category={feat3.data.category}
+            image={feat3.data.heroImage}
+            excerpt={feat3.data.description}
+            publishedAt={feat3.data.publishedAt}
+            publishedLabel={feat3.data.publishedLabel}
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         NEWSLETTER
+         ═══════════════════════════════════════════════ -->
+    <section class="section newsletter" id="newsletter">
+      <div class="site-container text-center">
+        <h2 class="newsletter__title">宇宙通信</h2>
+        <p class="newsletter__status" style="color:#d9534f; font-size:var(--fs-xs); margin-top:var(--sp-xs); font-weight:bold;">※現在準備中です</p>
+        <p class="newsletter__subtitle">
+          悟り、引き寄せ、意識、宇宙法則についての短い便り。<br />
+          記事になる前の断章が、宇宙から届きます。
+        </p>
+        <div class="newsletter__form">
+          <div class="newsletter__input-group">
+            <input
+              type="email"
+              class="input newsletter__input"
+              placeholder="メールアドレス"
+              aria-label="メールアドレス"
+              disabled
+            />
+            <button type="button" class="btn newsletter__btn" disabled style="opacity: 0.6; cursor: not-allowed;">
+              準備中
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <SiteFooter categoryLinksEnabled={true} staticLinksEnabled={true} />
+</BaseLayout>

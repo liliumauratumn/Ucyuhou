@@ -1,0 +1,502 @@
+---
+// SearchOverlay.astro
+// Shared search overlay component with client-side search logic.
+---
+<div id="search-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="search-modal-title">
+  <div class="search-modal-container">
+    <div class="search-modal-header">
+      <h3 id="search-modal-title">記事検索</h3>
+      <button id="search-modal-close" aria-label="閉じる" type="button">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+    <input type="text" id="search-modal-input" placeholder="キーワードを入力..." autocomplete="off" aria-label="検索キーワード">
+    <div id="search-modal-status" class="search-modal-status" aria-live="polite"></div>
+    <div id="search-modal-results" class="search-modal-results">
+      <!-- Results populated dynamically -->
+    </div>
+  </div>
+</div>
+
+<style>
+  #search-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+
+    --expanded-modal-height: clamp(450px, 70dvh, 650px);
+    --modal-top: max(30px, calc((100dvh - var(--expanded-modal-height)) / 2));
+
+    padding-top: var(--modal-top);
+    padding-bottom: 40px;
+  }
+
+  /* Handle theme colors via body class */
+  #search-modal {
+    --search-bg: #ffffff;
+    --search-border: #000000;
+    --search-text: #000000;
+    --search-input-bg: #ffffff;
+    --search-item-hover: #f9f9f9;
+    --search-muted: #555555;
+  }
+
+  :global(.theme-inverted) #search-modal {
+    --search-bg: #000000;
+    --search-border: #ffffff;
+    --search-text: #ffffff;
+    --search-input-bg: #000000;
+    --search-item-hover: #111111;
+    --search-muted: #cccccc;
+  }
+
+  .search-modal-container {
+    width: 90%;
+    max-width: 600px;
+    height: auto;
+    background: var(--search-bg);
+    border: 1px solid var(--search-border);
+    padding: 2rem;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+    transform: scale(0.95) translateZ(0);
+    transition: transform 0.3s ease, height 0.3s ease;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    will-change: transform, opacity, height;
+    border-radius: 0;
+    display: flex;
+    flex-direction: column;
+    max-height: calc(100dvh - var(--modal-top) - 60px);
+  }
+
+  .search-modal-container.is-expanded {
+    height: var(--expanded-modal-height);
+  }
+
+  #search-modal.active {
+    display: flex;
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  #search-modal.active .search-modal-container {
+    transform: scale(1) translateZ(0);
+  }
+
+  .search-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .search-modal-header h3 {
+    font-family: var(--font-sans);
+    font-size: var(--fs-md, 1.25rem);
+    font-weight: var(--fw-bold, 700);
+    margin: 0;
+    color: var(--search-text);
+    letter-spacing: var(--ls-wide);
+  }
+
+  #search-modal-close {
+    border: none;
+    background: none;
+    font-size: var(--fs-lg, 1.5rem);
+    cursor: pointer;
+    color: var(--search-text);
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    min-height: 44px;
+    transition: opacity 0.2s;
+    border-radius: 0;
+  }
+
+  #search-modal-close:hover {
+    opacity: 0.7;
+  }
+
+  #search-modal-input {
+    width: 100%;
+    border: 1px solid var(--search-border);
+    padding: 0.8rem 1.2rem;
+    font-family: var(--font-sans);
+    font-size: var(--fs-base, 1rem);
+    outline: none;
+    border-radius: 0;
+    background: var(--search-input-bg);
+    color: var(--search-text);
+    margin-bottom: 1.5rem;
+    font-weight: var(--fw-medium, 500);
+  }
+
+  #search-modal-input:focus {
+    box-shadow: inset 0 0 0 1px var(--search-border);
+  }
+
+  .search-modal-status {
+    font-family: var(--font-sans);
+    font-size: var(--fs-xs, 0.85rem);
+    color: var(--search-muted);
+    margin-bottom: 1rem;
+    min-height: 1.2em;
+  }
+
+  .search-modal-results {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    -webkit-overflow-scrolling: touch;
+    padding: 6px 4px;
+    box-sizing: border-box;
+  }
+
+  :global(.search-result-item) {
+    display: block;
+    padding: 1.2rem;
+    border: 1px solid var(--search-border);
+    background: var(--search-bg);
+    color: var(--search-text) !important;
+    text-decoration: none;
+    transition: background var(--transition-fast, 0.2s), transform var(--transition-fast, 0.2s);
+    border-radius: 0 !important;
+    outline: none;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    will-change: transform;
+  }
+
+  :global(.search-result-item:hover), :global(.search-result-item:focus) {
+    background: var(--search-item-hover);
+    transform: translateY(-2px);
+  }
+
+  :global(.search-result-item h4) {
+    margin: 0 0 0.4rem 0;
+    font-size: var(--fs-base, 1.1rem);
+    font-family: var(--font-sans, sans-serif);
+    color: var(--search-text) !important;
+    font-weight: var(--fw-bold, 700);
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  :global(.search-result-item p) {
+    margin: 0;
+    font-size: var(--fs-xs, 0.9rem) !important;
+    font-family: var(--font-sans, sans-serif) !important;
+    color: var(--search-muted) !important;
+    line-height: var(--lh-relaxed, 1.6);
+    letter-spacing: 0.03em;
+  }
+
+  :global(.search-result-category) {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: bold;
+    padding: 0.2em 0.6em;
+    background: var(--search-text);
+    color: var(--search-bg);
+    border-radius: 0 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  :global(.search-modal-open) {
+    overflow: hidden;
+  }
+</style>
+
+<script>
+  let searchDatabase = null;
+  let isLoading = false;
+  let loadError = false;
+  let lastActiveElement = null;
+  let isExpanded = false;
+
+  const modalContainer = document.getElementById('search-modal');
+  const modalContentContainer = modalContainer?.querySelector('.search-modal-container');
+  const modalInput = document.getElementById('search-modal-input') as HTMLInputElement;
+  const modalResults = document.getElementById('search-modal-results');
+  const modalStatus = document.getElementById('search-modal-status');
+  const closeBtn = document.getElementById('search-modal-close');
+
+  async function loadSearchIndex() {
+    if (searchDatabase || isLoading) return;
+    isLoading = true;
+    modalStatus.textContent = '検索データベースを読み込み中...';
+
+    try {
+      const response = await fetch('/search-index.json');
+      if (!response.ok) {
+        throw new Error('Failed to load search index');
+      }
+      searchDatabase = await response.json();
+      modalStatus.textContent = '';
+    } catch (err) {
+      console.error('Error loading search index:', err);
+      loadError = true;
+      modalStatus.textContent = 'エラー: 検索インデックスの読み込みに失敗しました。';
+    } finally {
+      isLoading = false;
+    }
+  }
+
+  function openSearch() {
+    isExpanded = false;
+    modalContentContainer?.classList.remove('is-expanded');
+    lastActiveElement = document.activeElement;
+    document.body.classList.add('search-modal-open');
+    modalContainer.classList.add('active');
+    modalContainer.setAttribute('aria-hidden', 'false');
+    modalInput.value = '';
+    modalResults.innerHTML = '';
+    modalStatus.textContent = '';
+    
+    // Focus the input
+    setTimeout(() => modalInput.focus(), 100);
+
+    // Fetch the index on open
+    loadSearchIndex();
+  }
+
+  function closeSearch() {
+    isExpanded = false;
+    modalContentContainer?.classList.remove('is-expanded');
+    document.body.classList.remove('search-modal-open');
+    modalContainer.classList.remove('active');
+    modalContainer.setAttribute('aria-hidden', 'true');
+    
+    // Restore focus
+    if (lastActiveElement && typeof lastActiveElement.focus === 'function') {
+      lastActiveElement.focus();
+    }
+  }
+
+  function normalizeText(text: string): string {
+    if (!text) return '';
+    return text
+      .normalize('NFKC')
+      .toLowerCase()
+      .replace(/[・\s「」『』、。\-—–]/g, '');
+  }
+
+  function generateExcerpt(body: string, queryWords: string[], description: string): string {
+    if (!body) return description || '';
+    
+    const normBody = normalizeText(body);
+    let matchIndex = -1;
+    let matchedWordLength = 0;
+
+    for (const word of queryWords) {
+      const idx = normBody.indexOf(word);
+      if (idx !== -1) {
+        matchIndex = idx;
+        matchedWordLength = word.length;
+        break;
+      }
+    }
+
+    if (matchIndex === -1) {
+      if (body.length <= 100) return body;
+      return body.substring(0, 100) + '...';
+    }
+
+    const start = Math.max(0, matchIndex - 30);
+    const end = Math.min(body.length, matchIndex + matchedWordLength + 70);
+    
+    let excerpt = body.substring(start, end);
+    if (start > 0) excerpt = '...' + excerpt;
+    if (end < body.length) excerpt = excerpt + '...';
+    
+    return excerpt;
+  }
+
+  function renderResults(query: string) {
+    if (loadError) {
+      modalStatus.textContent = 'エラー: 検索インデックスの読み込みに失敗しました。';
+      return;
+    }
+
+    const cleanQuery = query.trim();
+    if (!cleanQuery) {
+      modalResults.innerHTML = '';
+      modalStatus.textContent = '';
+      return;
+    }
+
+    if (!searchDatabase) {
+      modalStatus.textContent = '読み込み中...';
+      return;
+    }
+
+    // Split query by spaces for AND search
+    const queryWords = cleanQuery.split(/\s+/).map(w => normalizeText(w)).filter(Boolean);
+    if (queryWords.length === 0) {
+      modalResults.innerHTML = '';
+      modalStatus.textContent = '';
+      return;
+    }
+
+    // Score and filter articles
+    const matched = [];
+
+    for (const article of searchDatabase) {
+      const normTitle = normalizeText(article.title);
+      const normSubtitle = normalizeText(article.subtitle);
+      const normCategory = normalizeText(article.category);
+      const normTags = (article.tags || []).map((t: string) => normalizeText(t));
+      const normDescription = normalizeText(article.description);
+      const normBody = normalizeText(article.body);
+
+      let allWordsMatch = true;
+      let score = 0;
+
+      for (const word of queryWords) {
+        const inTitle = normTitle.includes(word);
+        const inSubtitle = normSubtitle.includes(word);
+        const inTagsCategory = normCategory.includes(word) || normTags.some((t: string) => t.includes(word));
+        const inDescription = normDescription.includes(word);
+        const inBody = normBody.includes(word);
+
+        if (!inTitle && !inSubtitle && !inTagsCategory && !inDescription && !inBody) {
+          allWordsMatch = false;
+          break;
+        }
+
+        // Add weights based on where the match occurred
+        if (inTitle) score += 10000;
+        else if (inSubtitle) score += 1000;
+        else if (inTagsCategory) score += 100;
+        else if (inDescription) score += 10;
+        else if (inBody) score += 1;
+      }
+
+      if (allWordsMatch) {
+        matched.push({
+          ...article,
+          score
+        });
+      }
+    }
+
+    // Sort results
+    matched.sort((a, b) => {
+      if (b.score !== a.score) {
+        return b.score - a.score;
+      }
+      const dateComparison = b.publishedAt.localeCompare(a.publishedAt);
+      if (dateComparison !== 0) return dateComparison;
+      return a.slug.localeCompare(b.slug);
+    });
+
+    // Limit to 20 results
+    const resultsToDisplay = matched.slice(0, 20);
+
+    modalResults.innerHTML = '';
+    
+    if (resultsToDisplay.length === 0) {
+      modalStatus.textContent = '一致する記事が見つかりません。';
+      return;
+    }
+
+    if (!isExpanded) {
+      isExpanded = true;
+      modalContentContainer?.classList.add('is-expanded');
+    }
+
+    modalStatus.textContent = `検索結果: ${matched.length}件`;
+
+    resultsToDisplay.forEach(item => {
+      const itemEl = document.createElement('a');
+      itemEl.href = item.url;
+      itemEl.className = 'search-result-item';
+      
+      const h4 = document.createElement('h4');
+      const span = document.createElement('span');
+      span.className = 'search-result-category';
+      span.textContent = item.category;
+      h4.appendChild(span);
+      h4.appendChild(document.createTextNode(' ' + item.title));
+      
+      const p = document.createElement('p');
+      p.textContent = generateExcerpt(item.body, queryWords, item.description);
+      
+      itemEl.appendChild(h4);
+      itemEl.appendChild(p);
+      
+      modalResults.appendChild(itemEl);
+    });
+  }
+
+  // Bind Open triggers
+  document.addEventListener('click', function(e) {
+    const target = e.target as HTMLElement;
+    const searchBtn = target.closest('.header-search-btn');
+    if (searchBtn) {
+      e.preventDefault();
+      openSearch();
+    }
+  });
+
+  // Bind Close triggers
+  closeBtn?.addEventListener('click', closeSearch);
+  modalContainer?.addEventListener('click', function(e) {
+    if (e.target === modalContainer) {
+      closeSearch();
+    }
+  });
+
+  let isComposing = false;
+
+  modalInput?.addEventListener('compositionstart', () => {
+    isComposing = true;
+  });
+
+  modalInput?.addEventListener('compositionend', (e) => {
+    isComposing = false;
+    const target = e.target as HTMLInputElement;
+    renderResults(target.value);
+  });
+
+  // Input Search events
+  modalInput?.addEventListener('input', function(e) {
+    if (isComposing || (e as InputEvent).isComposing) {
+      return;
+    }
+    const target = e.target as HTMLInputElement;
+    renderResults(target.value);
+  });
+
+  // Keybindings (Escape to close)
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && modalContainer?.classList.contains('active')) {
+      closeSearch();
+    }
+  });
+</script>
