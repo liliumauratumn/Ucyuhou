@@ -59,7 +59,7 @@ Reject unauthorized author names, invented biography, guru voice, sales language
 
 Judge what the article does. Recommend a category change only if it materially improves editorial accuracy.
 
-### 6. AI-scent check
+### 6. AI-scent and Readability check
 
 Cut or flag:
 
@@ -70,6 +70,14 @@ Cut or flag:
 - article-wide restatement in the ending;
 - grandiose abstraction without an object;
 - phrases that could appear in any spiritual article.
+
+Verify readability for middle school students (Iwanami Shonen Bunko level):
+- Check if a middle school student can read through the article smoothly without losing the thread of meaning.
+- Reject articles that use spiritual jargon (such as "vibration", "connection to the universe", "higher dimension", or "awakening") without clear, everyday explanations.
+- Ensure abstract concepts are replaced or explained with daily life emotions or behavioral examples.
+- Ensure sentences are short and clear, prioritizing direct Japanese words over difficult Chinese-character compounds.
+- Confirm that jargon is used only when removing it would harm accuracy, and that a brief explanation is always attached.
+
 
 ### 7. Frontmatter
 

@@ -55,16 +55,18 @@ const bodyClass = theme === 'cosmic' ? 'theme-inverted' : undefined;
     <article>
       <!-- Article Header -->
       <header class="article-header article-container">
-        {tags.length > 0 && (
-          <div class="article-tags">
-            {tags.map((tag, index) => {
-              if (index === 0) {
-                return <a href={`/category/${categorySlug}/`} class="article-tag">{tag}</a>;
-              }
-              return <span class="article-tag">{tag}</span>;
-            })}
-          </div>
-        )}
+        <div class="article-meta-info">
+          <a href={`/category/${categorySlug}/`} class="article-category-link">{category} ↗</a>
+          {tags.length > 1 && (
+            <span class="article-meta-tags">
+              {tags.slice(1).map((tag, index) => (
+                <span class="article-plain-tag">
+                  {tag}{index < tags.length - 2 && <span class="article-tag-separator">・</span>}
+                </span>
+              ))}
+            </span>
+          )}
+        </div>
 
         <h1 class="article-title">{title}</h1>
 
@@ -92,15 +94,16 @@ const bodyClass = theme === 'cosmic' ? 'theme-inverted' : undefined;
       </div>
 
       <!-- Article Footer -->
-      {tags.length > 0 && (
+      {tags.length > 1 && (
         <footer class="article-footer article-container">
-          <div class="article-tags">
-            {tags.map((tag, index) => {
-              if (index === 0) {
-                return <a href={`/category/${categorySlug}/`} class="article-tag">{tag}</a>;
-              }
-              return <span class="article-tag">{tag}</span>;
-            })}
+          <div class="article-meta-info">
+            <span class="article-meta-tags">
+              {tags.slice(1).map((tag, index) => (
+                <span class="article-plain-tag">
+                  {tag}{index < tags.length - 2 && <span class="article-tag-separator">・</span>}
+                </span>
+              ))}
+            </span>
           </div>
         </footer>
       )}

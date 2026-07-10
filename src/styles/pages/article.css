@@ -35,9 +35,51 @@
   transition: background var(--transition-fast);
 }
 
-.article-tag:hover {
+a.article-tag:hover {
   background: var(--color-border);
   color: var(--color-text);
+}
+
+/* ── Article Meta Info ────────────────────────────── */
+.article-meta-info {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--sp-md);
+  margin-bottom: var(--sp-xl);
+  font-size: var(--fs-xs);
+  font-family: var(--font-sans);
+}
+
+.article-category-link {
+  font-weight: var(--fw-bold);
+  color: var(--color-text-secondary);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color var(--transition-fast);
+}
+
+.article-category-link:hover {
+  color: var(--color-text);
+}
+
+.article-meta-tags {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.article-category-link + .article-meta-tags {
+  margin-left: var(--sp-md); /* 十分な余白 */
+}
+
+.article-plain-tag {
+  color: var(--color-text-tertiary);
+}
+
+.article-tag-separator {
+  margin: 0 4px;
+  color: var(--color-border);
 }
 
 /* Protected irregularity — tags have individual letter-spacing and padding */
@@ -205,6 +247,10 @@
   font-size: var(--fs-md);
   line-height: var(--lh-relaxed);
   margin-bottom: var(--sp-xl);
+}
+
+.article-body p + p {
+  margin-top: -0.4em; /* 連続する通常段落の間隔を約1.35em（約24px）に調整 */
 }
 
 /* ── Drop Cap ─────────────────────────────────────── */
@@ -463,9 +509,25 @@ body.theme-inverted .article-tag {
   color: #ffffff !important;
 }
 
-body.theme-inverted .article-tag:hover {
+body.theme-inverted a.article-tag:hover {
   background: #ffffff !important;
   color: #000000 !important;
+}
+
+body.theme-inverted .article-category-link {
+  color: #cccccc !important;
+}
+
+body.theme-inverted .article-category-link:hover {
+  color: #ffffff !important;
+}
+
+body.theme-inverted .article-plain-tag {
+  color: #999999 !important;
+}
+
+body.theme-inverted .article-tag-separator {
+  color: #444444 !important;
 }
 
 body.theme-inverted .article-body blockquote {

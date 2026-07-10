@@ -40,6 +40,14 @@ Use the official author name exactly:
 
 Use calm, precise Japanese in the `である` style. Write as a reader of structures, not a salesperson, guru, beginner, or AI assistant.
 
+Ensure the writing style is accessible to middle school students (similar to the readability level of Iwanami Shonen Bunko):
+- Do not assume the reader has prior knowledge of spiritual concepts.
+- Avoid difficult expressions and spiritual jargon (such as "raising vibration", "connecting with the universe", "higher dimensions", or "awakening") without explanation. If you must use them, explain their meaning in simple terms at the first appearance.
+- Replace abstract descriptions with everyday emotions or behavioral examples.
+- Keep sentences concise and clear. Prefer plain Japanese words over complex Sino-Japanese characters or difficult phrasing.
+- If omitting a jargon term would make the meaning inaccurate, keep it but always provide a short, simple explanation.
+
+
 ## Drafting rules
 
 - Start with the article's actual distinction or problem, not a generic preamble.
