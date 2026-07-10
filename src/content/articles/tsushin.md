@@ -11,6 +11,11 @@ heroImage: "/assets/images/card-water.jpg"
 heroAlt: "水面"
 theme: "cosmic"
 sourceFile: "article-tsushin.html"
+tags: ["宇宙通信", "受信ログ"]
+reactionLabel: "同調"
+reactionCount: 194
+commentLabel: "交信"
+commentCount: 12
 ---
 
 <div class="article-container" style="margin-bottom: var(--sp-xl);">

@@ -12,32 +12,32 @@
 
 | 旧HTML | 現在のタイトル | カテゴリ | 移行後slug案 | 本文状態 | 使用画像 | 予定テーマ | 移行状態 |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| `article-abraham.html` | エイブラハムの「許可する」とは何を許すことなのか | 引き寄せ | `abraham` | スタブ（極小: 66文字）※加筆せずそのまま移行 | `assets/images/hero-main.jpg` | `default` | 未移行 |
-| `article-allowed.html` | 在ることが許されている状態 | 目覚め | `allowed` | スタブ（極小: 50文字）※加筆せずそのまま移行 | `assets/images/hero-main.jpg` | `default` | 未移行 |
-| `article-anatta.html` | ブッダの「無我」と現代における自己同一化の解除 | 悟り | `anatta` | スタブ（極小: 61文字）※加筆せずそのまま移行 | `assets/images/hero-main.jpg` | `default` | 未移行 |
-| `article-buddha.html` | ブッダの苦と引き寄せの抵抗はどこでつながるか | 悟り | `buddha` | スタブ（極小: 64文字）※加筆せずそのまま移行 | `assets/images/hero-main.jpg` | `default` | 未移行 |
-| `article-bunsho.html` | ホ・オポノポノの真意、ハワイ伝統と現代解釈の溝を読む | 文書 | `bunsho` | 十分な長さ（完成: 772文字） | `assets/images/hero-main.jpg` | `default` | 未移行 |
-| `article-desire.html` | 願望と執着の違い | 引き寄せ | `desire` | スタブ（極小: 51文字）※加筆せずそのまま移行 | `assets/images/hero-main.jpg` | `default` | 未移行 |
-| `article-discard.html` | 欲しいものリストを捨てる | 引き寄せ | `discard` | スタブ（極小: 66文字）※加筆せずそのまま移行 | `assets/images/hero-main.jpg` | `default` | 未移行 |
-| `article-emerald-prep.html` | エメラルドタブレットを読む前に知るべきこと | 文書 | `emerald-prep` | スタブ（極小: 64文字）※加筆せずそのまま移行 | `assets/images/hero-main.jpg` | `default` | 未移行 |
-| `article-emerald.html` | エメラルドタブレットの「上なるものと下なるもの」を読む | 文書 | `emerald` | スタブ（極小: 59文字）※加筆せずそのまま移行 | `assets/images/hero-main.jpg` | `default` | 未移行 |
-| `article-hikiyose.html` | 願うほど遠ざかる理由——引き寄せの「抵抗」を再読する | 引き寄せ | `hikiyose` | 十分な長さ（完成: 762文字） | `assets/images/card-water.jpg` | `default` | 未移行 |
-| `article-jissen-1.html` | 「私は誰か」を問い続けるマハルシの探求 | 実践 | `jissen-1` | 十分な長さ（完成: 326文字）※独自書き下ろし | `assets/images/card-books.jpg` | `default` | 未移行 |
-| `article-jissen-2.html` | ホ・オポノポノの実践：記憶のクリーニング | 実践 | `jissen-2` | 十分な長さ（完成: 296文字）※独自書き下ろし | `assets/images/card-water.jpg` | `default` | 未移行 |
-| `article-kakera-1.html` | 自我の境界線が溶ける瞬間 | 思考の欠片 | `kakera-1` | 十分な長さ（完成: 287文字）※独自書き下ろし | `assets/images/card-sky.jpg` | `default` | 未移行 |
-| `article-kakera-2.html` | 言葉が現実を切り取る前の世界 | 思考の欠片 | `kakera-2` | 十分な長さ（完成: 299文字）※独自書き下ろし | `assets/images/card-corridor.jpg` | `default` | 未移行 |
-| `article-law.html` | エメラルドタブレット翻訳史——錬金術の最高経典が伝える宇宙の法則 | 宇宙の法則 | `law` | 十分な長さ（完成: 790文字） | `assets/images/card-books.jpg` | `default` | 未移行 |
-| `article-maharshi.html` | マハルシの静寂——インド覚者が遺した「私は誰か」という自問 | 悟り | `maharshi` | スタブ（極小: 57文字）※加筆せずそのまま移行 | `assets/images/hero-main.jpg` | `default` | 未移行 |
-| `article-mezame.html` | 意識とは「見ている場」のことである | 目覚め | `mezame` | 十分な長さ（完成: 727文字） | `assets/images/card-corridor.jpg` | `default` | 未移行 |
-| `article-mirror.html` | 現実は内面の鏡ではなく、内面の配置である | 宇宙の法則 | `mirror` | スタブ（極小: 62文字）※加筆せずそのまま移行 | `assets/images/hero-main.jpg` | `default` | 未移行 |
-| `article-narrow.html` | 思考はなぜ現実を狭くするのか | 悟り | `narrow` | スタブ（極小: 63文字）※加筆せずそのまま移行 | `assets/images/hero-main.jpg` | `default` | 未移行 |
-| `article-no-resistance.html` | 抵抗の不在が引き寄せの正体である | 引き寄せ | `no-resistance` | スタブ（極小: 63文字）※加筆せずそのまま移行 | `assets/images/hero-main.jpg` | `default` | 未移行 |
-| `article-quantum.html` | 量子力学と意識の境界、観測者効果は引き寄せを証明するか | 引き寄せ | `quantum` | スタブ（極小: 79文字）※加筆せずそのまま移行 | `assets/images/hero-main.jpg` | `default` | 未移行 |
-| `article-satori.html` | 悟りとは、特別な境地ではない | 悟り | `satori` | 十分な長さ（完成: 751文字） | `assets/images/hero-main.jpg` | `default` | 代表移行済み・スキーマ検証済み |
-| `article-scale.html` | 感情のスケールを超えた視点 | 引き寄せ | `scale` | スタブ（極小: 69文字）※加筆せずそのまま移行 | `assets/images/hero-main.jpg` | `default` | 未移行 |
-| `article-tolle.html` | エックハルト・トールの「いまここ」は時間論ではない | 悟り | `tolle` | スタブ（極小: 57文字）※加筆せずそのまま移行 | `assets/images/hero-main.jpg` | `default` | 未移行 |
-| `article-tsushin.html` | 宇宙通信・創刊号 | 宇宙通信 | `tsushin` | 十分な長さ（完成） | `assets/images/card-water.jpg` | `cosmic` | 代表移行済み・スキーマ検証済み |
-| `article-vortex.html` | エイブラハムの Vortex は「私の消滅」に近い | 引き寄せ | `vortex` | スタブ（極小: 57文字）※加筆せずそのまま移行 | `assets/images/hero-main.jpg` | `default` | 未移行 |
+| `article-abraham.html` | エイブラハムの「許可する」とは何を許すことなのか | 引き寄せ | `abraham` | スタブ（極小: 66文字）※加筆せずそのまま移行 | `assets/images/hero-main.jpg` | `default` | 移行済み・動的表示検証済み |
+| `article-allowed.html` | 在ることが許されている状態 | 目覚め | `allowed` | スタブ（極小: 50文字）※加筆せずそのまま移行 | `assets/images/hero-main.jpg` | `default` | 移行済み・動的表示検証済み |
+| `article-anatta.html` | ブッダの「無我」と現代における自己同一化の解除 | 悟り | `anatta` | スタブ（極小: 61文字）※加筆せずそのまま移行 | `assets/images/hero-main.jpg` | `default` | 移行済み・動的表示検証済み |
+| `article-buddha.html` | ブッダの苦と引き寄せの抵抗はどこでつながるか | 悟り | `buddha` | スタブ（極小: 64文字）※加筆せずそのまま移行 | `assets/images/hero-main.jpg` | `default` | 移行済み・動的表示検証済み |
+| `article-bunsho.html` | ホ・オポノポノの真意、ハワイ伝統と現代解釈の溝を読む | 文書 | `bunsho` | 十分な長さ（完成: 772文字） | `assets/images/hero-main.jpg` | `default` | 移行済み・動的表示検証済み |
+| `article-desire.html` | 願望と執着の違い | 引き寄せ | `desire` | スタブ（極小: 51文字）※加筆せずそのまま移行 | `assets/images/hero-main.jpg` | `default` | 移行済み・動的表示検証済み |
+| `article-discard.html` | 欲しいものリストを捨てる | 引き寄せ | `discard` | スタブ（極小: 66文字）※加筆せずそのまま移行 | `assets/images/hero-main.jpg` | `default` | 移行済み・動的表示検証済み |
+| `article-emerald-prep.html` | エメラルドタブレットを読む前に知るべきこと | 文書 | `emerald-prep` | スタブ（極小: 64文字）※加筆せずそのまま移行 | `assets/images/hero-main.jpg` | `default` | 移行済み・動的表示検証済み |
+| `article-emerald.html` | エメラルドタブレットの「上なるものと下なるもの」を読む | 文書 | `emerald` | スタブ（極小: 59文字）※加筆せずそのまま移行 | `assets/images/hero-main.jpg` | `default` | 移行済み・動的表示検証済み |
+| `article-hikiyose.html` | 願うほど遠ざかる理由——引き寄せの「抵抗」を再読する | 引き寄せ | `hikiyose` | 十分な長さ（完成: 762文字） | `assets/images/card-water.jpg` | `default` | 移行済み・動的表示検証済み |
+| `article-jissen-1.html` | 「私は誰か」を問い続けるマハルシの探求 | 実践 | `jissen-1` | 十分な長さ（完成: 326文字）※独自書き下ろし | `assets/images/card-books.jpg` | `default` | 移行済み・動的表示検証済み |
+| `article-jissen-2.html` | ホ・オポノポノの実践：記憶のクリーニング | 実践 | `jissen-2` | 十分な長さ（完成: 296文字）※独自書き下ろし | `assets/images/card-water.jpg` | `default` | 移行済み・動的表示検証済み |
+| `article-kakera-1.html` | 自我の境界線が溶ける瞬間 | 思考の欠片 | `kakera-1` | 十分な長さ（完成: 287文字）※独自書き下ろし | `assets/images/card-sky.jpg` | `default` | 移行済み・動的表示検証済み |
+| `article-kakera-2.html` | 言葉が現実を切り取る前の世界 | 思考の欠片 | `kakera-2` | 十分な長さ（完成: 299文字）※独自書き下ろし | `assets/images/card-corridor.jpg` | `default` | 移行済み・動的表示検証済み |
+| `article-law.html` | エメラルドタブレット翻訳史——錬金術の最高経典が伝える宇宙の法則 | 宇宙の法則 | `law` | 十分な長さ（完成: 790文字） | `assets/images/card-books.jpg` | `default` | 移行済み・動的表示検証済み |
+| `article-maharshi.html` | マハルシの静寂——インド覚者が遺した「私は誰か」という自問 | 悟り | `maharshi` | スタブ（極小: 57文字）※加筆せずそのまま移行 | `assets/images/hero-main.jpg` | `default` | 移行済み・動的表示検証済み |
+| `article-mezame.html` | 意識とは「見ている場」のことである | 目覚め | `mezame` | 十分な長さ（完成: 727文字） | `assets/images/card-corridor.jpg` | `default` | 移行済み・動的表示検証済み |
+| `article-mirror.html` | 現実は内面の鏡ではなく、内面の配置である | 宇宙の法則 | `mirror` | スタブ（極小: 62文字）※加筆せずそのまま移行 | `assets/images/hero-main.jpg` | `default` | 移行済み・動的表示検証済み |
+| `article-narrow.html` | 思考はなぜ現実を狭くするのか | 悟り | `narrow` | スタブ（極小: 63文字）※加筆せずそのまま移行 | `assets/images/hero-main.jpg` | `default` | 移行済み・動的表示検証済み |
+| `article-no-resistance.html` | 抵抗の不在が引き寄せの正体である | 引き寄せ | `no-resistance` | スタブ（極小: 63文字）※加筆せずそのまま移行 | `assets/images/hero-main.jpg` | `default` | 移行済み・動的表示検証済み |
+| `article-quantum.html` | 量子力学と意識の境界、観測者効果は引き寄せを証明するか | 引き寄せ | `quantum` | スタブ（極小: 79文字）※加筆せずそのまま移行 | `assets/images/hero-main.jpg` | `default` | 移行済み・動的表示検証済み |
+| `article-satori.html` | 悟りとは、特別な境地ではない | 悟り | `satori` | 十分な長さ（完成: 751文字） | `assets/images/hero-main.jpg` | `default` | 移行済み・動的表示検証済み |
+| `article-scale.html` | 感情のスケールを超えた視点 | 引き寄せ | `scale` | スタブ（極小: 69文字）※加筆せずそのまま移行 | `assets/images/hero-main.jpg` | `default` | 移行済み・動的表示検証済み |
+| `article-tolle.html` | エックハルト・トールの「いまここ」は時間論ではない | 悟り | `tolle` | スタブ（極小: 57文字）※加筆せずそのまま移行 | `assets/images/hero-main.jpg` | `default` | 移行済み・動的表示検証済み |
+| `article-tsushin.html` | 宇宙通信・創刊号 | 宇宙通信 | `tsushin` | 十分な長さ（完成） | `assets/images/card-water.jpg` | `cosmic` | 移行済み・動的表示検証済み |
+| `article-vortex.html` | エイブラハムの Vortex は「私の消滅」に近い | 引き寄せ | `vortex` | スタブ（極小: 57文字）※加筆せずそのまま移行 | `assets/images/hero-main.jpg` | `default` | 移行済み・動的表示検証済み |
 
 ---
 
@@ -48,14 +48,14 @@
 
 | 旧HTML | カテゴリ名 | 移行後動的パス | 移行状態 | 備考 |
 | :--- | :--- | :--- | :--- | :--- |
-| `category-bunsho.html` | 文書 — Bunsho | `/category/bunsho` | 未移行 | |
-| `category-hikiyose.html` | 引き寄せ — Hikiyose | `/category/hikiyose` | 未移行 | |
-| `category-jissen.html` | 実践 — Practice | `/category/jissen` | 未移行 | |
-| `category-kakera.html` | 思考の欠片 — Fragments | `/category/kakera` | 未移行 | |
-| `category-law.html` | 宇宙の法則 — Law | `/category/law` | 未移行 | |
-| `category-mezame.html` | 目覚め — Mezame | `/category/mezame` | 未移行 | |
-| `category-satori.html` | 悟り — Satori | `/category/satori` | 未移行 | |
-| `category-tsushin.html` | 宇宙通信 — Cosmic Communications | `/category/tsushin` | 未移行 | ※`theme: cosmic` による反転デザインの適用 |
+| `category-bunsho.html` | 文書 — Bunsho | `/category/bunsho` | 移行済み・動的表示検証済み | |
+| `category-hikiyose.html` | 引き寄せ — Hikiyose | `/category/hikiyose` | 移行済み・動的表示検証済み | |
+| `category-jissen.html` | 実践 — Practice | `/category/jissen` | 移行済み・動的表示検証済み | |
+| `category-kakera.html` | 思考の欠片 — Fragments | `/category/kakera` | 移行済み・動的表示検証済み | |
+| `category-law.html` | 宇宙の法則 — Law | `/category/law` | 移行済み・動的表示検証済み | |
+| `category-mezame.html` | 目覚め — Mezame | `/category/mezame` | 移行済み・動的表示検証済み | |
+| `category-satori.html` | 悟り — Satori | `/category/satori` | 移行済み・動的表示検証済み | |
+| `category-tsushin.html` | 宇宙通信 — Cosmic Communications | `/category/tsushin` | 移行済み・動的表示検証済み | ※`theme: cosmic` による反転デザインの適用 |
 
 ---
 

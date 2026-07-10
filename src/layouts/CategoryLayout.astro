@@ -1,0 +1,163 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import ArticleCard from '../components/ArticleCard.astro';
+import '../styles/pages/category.css';
+
+interface Props {
+  categorySlug: string;
+  categoryName: string;
+  categoryEnglishName: string;
+  categoryDescription: string;
+  theme: 'default' | 'cosmic';
+  articles: any[];
+}
+
+const {
+  categorySlug,
+  categoryName,
+  categoryEnglishName,
+  categoryDescription,
+  theme,
+  articles,
+} = Astro.props;
+
+const bodyClass = theme === 'cosmic' ? 'theme-inverted' : undefined;
+const hasArticles = articles.length > 0;
+const featuredArticle = hasArticles ? articles[0] : null;
+const gridArticles = hasArticles ? articles.slice(1) : [];
+---
+<BaseLayout title={`${categoryName} | 宇宙を悟り法則を引き寄せる`} description={categoryDescription} bodyClass={bodyClass}>
+  <SiteHeader activeSection={categorySlug} navigationEnabled={true} searchEnabled={false} />
+
+  <main>
+    <div class="site-container">
+      <!-- Category Header -->
+      <section class="category-header">
+        <h1 class="category-header__name">{categoryName}</h1>
+        <p class="category-header__english">{categoryEnglishName}</p>
+        <p class="category-header__description">
+          {categoryDescription.split('\n').map((line, index, arr) => (
+            <Fragment key={index}>
+              {line}
+              {index < arr.length - 1 && <br />}
+            </Fragment>
+          ))}
+        </p>
+      </section>
+
+      <!-- Tsushin-specific Subscription Area -->
+      {theme === 'cosmic' && (
+        <section class="section newsletter" style="border-bottom: 1px solid #ffffff; padding: var(--sp-2xl) 0;">
+          <div class="text-center" style="max-width: 580px; margin: 0 auto;">
+            <h2 class="newsletter__title" style="font-size: var(--fs-xl); margin-bottom: var(--sp-md); color: #ffffff;">宇宙からの通信を受信する</h2>
+            <p class="newsletter__subtitle" style="font-size: var(--fs-sm); color: #cccccc; margin-bottom: var(--sp-lg);">
+              思考の外部から送信される断章を、あなたの端末へ届けます。
+            </p>
+            <form class="newsletter__form" action="#" method="post">
+              <div class="newsletter__input-group" style="display: flex; height: 100px; border: 1px solid #ffffff; background: #000000; padding: 2px; align-items: stretch;">
+                <input
+                  type="email"
+                  placeholder="受信アドレス"
+                  style="flex: 1; border: none; padding: 0 1.5rem; font-family: var(--font-sans); font-size: var(--fs-base); outline: none; border-radius: 0; background: #000000; color: #ffffff; height: 100%;"
+                  disabled
+                />
+                <button
+                  type="button"
+                  style="border: none; background: #ffffff; color: #000000; width: 56px; font-family: var(--font-sans); font-size: var(--fs-xs); font-weight: var(--fw-bold); cursor: not-allowed; border-radius: 0; height: 100%; display: flex; align-items: center; justify-content: center; writing-mode: vertical-rl; text-orientation: upright; letter-spacing: 0.1em; padding: 0; opacity: 0.6;"
+                  disabled
+                >
+                  受信する
+                </button>
+              </div>
+            </form>
+          </div>
+        </section>
+      )}
+
+      {categorySlug !== 'tsushin' ? (
+        <>
+          <!-- Featured Article -->
+          {featuredArticle && (
+            <a href={`/articles/${featuredArticle.data.slug}/`} class="featured-article">
+              <div class="featured-article__image-wrap">
+                <img src={featuredArticle.data.heroImage} alt={featuredArticle.data.heroAlt} width="600" height="375" loading="eager" />
+              </div>
+              <div class="featured-article__body">
+                <span
+                  class="category-tag featured-article__category"
+                  style={theme === 'cosmic' ? "background: #ffffff; color: #000000; border: 1px solid #ffffff;" : undefined}
+                >
+                  {categoryName}
+                </span>
+                <h2 class="featured-article__title">{featuredArticle.data.title}</h2>
+                {featuredArticle.data.description && <p class="featured-article__excerpt">{featuredArticle.data.description}</p>}
+                <time class="featured-article__time" datetime={featuredArticle.data.publishedAt}>
+                  {featuredArticle.data.publishedLabel}
+                </time>
+              </div>
+            </a>
+          )}
+
+          <!-- Article Grid -->
+          {gridArticles.length > 0 && (
+            <section class="article-grid-section">
+              <div class="article-grid">
+                {gridArticles.map(item => (
+                  <ArticleCard
+                    title={item.data.title}
+                    href={`/articles/${item.data.slug}/`}
+                    category={item.data.category}
+                    image={item.data.heroImage}
+                    excerpt={item.data.description}
+                    publishedAt={item.data.publishedAt}
+                    publishedLabel={item.data.publishedLabel}
+                  />
+                ))}
+              </div>
+            </section>
+          )}
+        </>
+      ) : (
+        <!-- TRANSMISSION LOG (Tsushin Category Only) -->
+        <section class="article-grid-section" style="padding: var(--sp-3xl) 0 var(--sp-4xl);">
+          <h2 style="font-family: var(--font-sans); font-size: var(--fs-sm); font-weight: var(--fw-bold); text-transform: uppercase; letter-spacing: var(--ls-widest); color: #cccccc; margin-bottom: var(--sp-2xl);">
+            受信履歴 (Transmission Log)
+          </h2>
+          
+          <div class="article-grid" style="grid-template-columns: 1fr; gap: var(--sp-xl);">
+            {articles.map((item) => (
+              <a
+                href={`/articles/${item.data.slug}/`}
+                class="article-card"
+                style="display: block; padding: var(--sp-xl); border: 1px solid #ffffff; background: #000000; text-decoration: none; color: inherit; transition: transform 0.2s ease, box-shadow 0.2s ease;"
+              >
+                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: var(--sp-sm);">
+                  <span style="font-family: var(--font-sans); font-size: var(--fs-xs); font-weight: var(--fw-bold); text-transform: uppercase; letter-spacing: var(--ls-wide); background: #ffffff; color: #000000; padding: 0.2em 0.5em;">
+                    {item.data.title}
+                  </span>
+                  <time style="font-size: var(--fs-xs); color: #888888;" datetime={item.data.publishedAt}>
+                    地球時間 {item.data.publishedLabel}
+                  </time>
+                </div>
+                {item.data.subtitle && (
+                  <h3 style="font-family: var(--font-sans); font-size: var(--fs-lg); font-weight: var(--fw-bold); margin-bottom: var(--sp-xs); line-height: var(--lh-tight); color: #ffffff;">
+                    {item.data.subtitle}
+                  </h3>
+                )}
+                {item.data.description && (
+                  <p style="font-family: var(--font-serif); font-size: var(--fs-sm); color: #cccccc; line-height: var(--lh-relaxed); margin: 0;">
+                    {item.data.description}
+                  </p>
+                )}
+              </a>
+            ))}
+          </div>
+        </section>
+      )}
+    </div>
+  </main>
+
+  <SiteFooter categoryLinksEnabled={true} staticLinksEnabled={false} />
+</BaseLayout>

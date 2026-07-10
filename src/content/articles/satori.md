@@ -11,6 +11,13 @@ heroImage: "/assets/images/hero-main.jpg"
 heroAlt: "静けさの中の書物"
 theme: "default"
 sourceFile: "article-satori.html"
+tags: ["悟り", "非二元", "Eckhart Tolle", "Buddha"]
+authorName: "宇宙を悟り法則を引き寄せる 編集部"
+readTime: "8 min read"
+reactionLabel: "拍手"
+reactionCount: 318
+commentLabel: "コメント"
+commentCount: 42
 ---
 
 <p class="dropcap-wrap"><span class="dropcap">悟</span>りとは、知性の限界を超えた未知の体験や、神秘的な法悦の連続ではない。古来より数多くの覚者が指摘してきたように、それはむしろ「思考が作り上げていた自己像（エゴ）の誤解が解けること」であり、非常にシンプルで静かな現実の再発見である。</p>

@@ -1,4 +1,6 @@
 ---
+import { categories } from '../data/categories';
+
 interface Props {
   activeSection?: string;
   navigationEnabled?: boolean;
@@ -6,17 +8,6 @@ interface Props {
 }
 
 const { activeSection, navigationEnabled = true, searchEnabled = false } = Astro.props;
-
-const categories = [
-  { slug: 'satori', name: '悟り' },
-  { slug: 'hikiyose', name: '引き寄せ' },
-  { slug: 'law', name: '宇宙の法則' },
-  { slug: 'mezame', name: '目覚め' },
-  { slug: 'bunsho', name: '文書' },
-  { slug: 'jissen', name: '実践' },
-  { slug: 'kakera', name: '思考の欠片' },
-  { slug: 'tsushin', name: '宇宙通信' },
-];
 ---
 <header class="site-header" id="site-header">
   <div class="header-top-bar">

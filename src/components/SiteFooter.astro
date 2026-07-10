@@ -1,4 +1,10 @@
 ---
+interface Props {
+  categoryLinksEnabled?: boolean;
+  staticLinksEnabled?: boolean;
+}
+
+const { categoryLinksEnabled = false, staticLinksEnabled = false } = Astro.props;
 ---
 <footer class="site-footer" id="site-footer">
   <div class="footer-inner">
@@ -12,26 +18,86 @@
         <div class="footer-nav-group">
           <h4>カテゴリ</h4>
           <ul>
-            <li><a style="pointer-events: none; cursor: default; color: rgba(240, 240, 240, 0.85);" tabindex="-1">悟り</a></li>
-            <li><a style="pointer-events: none; cursor: default; color: rgba(240, 240, 240, 0.85);" tabindex="-1">引き寄せ</a></li>
-            <li><a style="pointer-events: none; cursor: default; color: rgba(240, 240, 240, 0.85);" tabindex="-1">宇宙の法則</a></li>
-            <li><a style="pointer-events: none; cursor: default; color: rgba(240, 240, 240, 0.85);" tabindex="-1">目覚め</a></li>
+            <li>
+              {categoryLinksEnabled ? (
+                <a href="/category/satori/">悟り</a>
+              ) : (
+                <a style="pointer-events: none; cursor: default; color: rgba(240, 240, 240, 0.85);" tabindex="-1">悟り</a>
+              )}
+            </li>
+            <li>
+              {categoryLinksEnabled ? (
+                <a href="/category/hikiyose/">引き寄せ</a>
+              ) : (
+                <a style="pointer-events: none; cursor: default; color: rgba(240, 240, 240, 0.85);" tabindex="-1">引き寄せ</a>
+              )}
+            </li>
+            <li>
+              {categoryLinksEnabled ? (
+                <a href="/category/law/">宇宙の法則</a>
+              ) : (
+                <a style="pointer-events: none; cursor: default; color: rgba(240, 240, 240, 0.85);" tabindex="-1">宇宙の法則</a>
+              )}
+            </li>
+            <li>
+              {categoryLinksEnabled ? (
+                <a href="/category/mezame/">目覚め</a>
+              ) : (
+                <a style="pointer-events: none; cursor: default; color: rgba(240, 240, 240, 0.85);" tabindex="-1">目覚め</a>
+              )}
+            </li>
           </ul>
         </div>
         <div class="footer-nav-group">
           <h4>コンテンツ</h4>
           <ul>
-            <li><a style="pointer-events: none; cursor: default; color: rgba(240, 240, 240, 0.85);" tabindex="-1">文書</a></li>
-            <li><a style="pointer-events: none; cursor: default; color: rgba(240, 240, 240, 0.85);" tabindex="-1">実践</a></li>
-            <li><a style="pointer-events: none; cursor: default; color: rgba(240, 240, 240, 0.85);" tabindex="-1">思考の欠片</a></li>
+            <li>
+              {categoryLinksEnabled ? (
+                <a href="/category/bunsho/">文書</a>
+              ) : (
+                <a style="pointer-events: none; cursor: default; color: rgba(240, 240, 240, 0.85);" tabindex="-1">文書</a>
+              )}
+            </li>
+            <li>
+              {categoryLinksEnabled ? (
+                <a href="/category/jissen/">実践</a>
+              ) : (
+                <a style="pointer-events: none; cursor: default; color: rgba(240, 240, 240, 0.85);" tabindex="-1">実践</a>
+              )}
+            </li>
+            <li>
+              {categoryLinksEnabled ? (
+                <a href="/category/kakera/">思考の欠片</a>
+              ) : (
+                <a style="pointer-events: none; cursor: default; color: rgba(240, 240, 240, 0.85);" tabindex="-1">思考の欠片</a>
+              )}
+            </li>
           </ul>
         </div>
         <div class="footer-nav-group">
           <h4>サイト情報</h4>
           <ul>
-            <li><a style="pointer-events: none; cursor: default; color: rgba(240, 240, 240, 0.85);" tabindex="-1">宇宙通信</a></li>
-            <li><a style="pointer-events: none; cursor: default; color: rgba(240, 240, 240, 0.85);" tabindex="-1">このサイトについて</a></li>
-            <li><a style="pointer-events: none; cursor: default; color: rgba(240, 240, 240, 0.85);" tabindex="-1">問い合わせ</a></li>
+            <li>
+              {categoryLinksEnabled ? (
+                <a href="/category/tsushin/">宇宙通信</a>
+              ) : (
+                <a style="pointer-events: none; cursor: default; color: rgba(240, 240, 240, 0.85);" tabindex="-1">宇宙通信</a>
+              )}
+            </li>
+            <li>
+              {staticLinksEnabled ? (
+                <a href="/about/">このサイトについて</a>
+              ) : (
+                <a style="pointer-events: none; cursor: default; color: rgba(240, 240, 240, 0.85);" tabindex="-1">このサイトについて</a>
+              )}
+            </li>
+            <li>
+              {staticLinksEnabled ? (
+                <a href="/contact/">問い合わせ</a>
+              ) : (
+                <a style="pointer-events: none; cursor: default; color: rgba(240, 240, 240, 0.85);" tabindex="-1">問い合わせ</a>
+              )}
+            </li>
           </ul>
         </div>
       </nav>
@@ -39,8 +105,16 @@
     <div class="footer-bottom">
       <small class="footer-copyright">&copy; 2026 宇宙を悟り法則を引き寄せる</small>
       <div class="footer-legal">
-        <a style="pointer-events: none; cursor: default; color: rgba(240, 240, 240, 0.65);" tabindex="-1">プライバシーポリシー</a>
-        <a style="pointer-events: none; cursor: default; color: rgba(240, 240, 240, 0.65);" tabindex="-1">利用規約</a>
+        {staticLinksEnabled ? (
+          <a href="/privacy/">プライバシーポリシー</a>
+        ) : (
+          <a style="pointer-events: none; cursor: default; color: rgba(240, 240, 240, 0.65);" tabindex="-1">プライバシーポリシー</a>
+        )}
+        {staticLinksEnabled ? (
+          <a href="/terms/">利用規約</a>
+        ) : (
+          <a style="pointer-events: none; cursor: default; color: rgba(240, 240, 240, 0.65);" tabindex="-1">利用規約</a>
+        )}
       </div>
     </div>
   </div>

@@ -34,6 +34,13 @@ const articles = defineCollection({
     heroAlt: z.string(),
     theme: z.enum(['default', 'cosmic']),
     sourceFile: z.string(),
+    tags: z.array(z.string()).optional(),
+    authorName: z.string().optional(),
+    readTime: z.string().optional(),
+    reactionLabel: z.string().optional(),
+    reactionCount: z.number().optional(),
+    commentLabel: z.string().optional(),
+    commentCount: z.number().optional(),
   })
 });
 
