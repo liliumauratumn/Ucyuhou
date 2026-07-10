@@ -12,7 +12,7 @@ heroAlt: "「私は誰か」を問い続けるマハルシの探求"
 theme: "default"
 sourceFile: "article-jissen-1.html"
 tags: ["実践", "ラマナ・マハルシ", "自己探求"]
-authorName: "宇宙を悟り法則を引き寄せる 編集部"
+authorName: "宇宙を悟り法則を引き寄せる"
 readTime: "8 min read"
 reactionLabel: "拍手"
 reactionCount: 318

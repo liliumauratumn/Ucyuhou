@@ -12,7 +12,7 @@ heroAlt: "古書"
 theme: "default"
 sourceFile: "article-law.html"
 tags: ["宇宙の法則", "文書", "エメラルドタブレット", "Hermeticism"]
-authorName: "宇宙を悟り法則を引き寄せる 編集部"
+authorName: "宇宙を悟り法則を引き寄せる"
 readTime: "10 min read"
 reactionLabel: "拍手"
 reactionCount: 528

@@ -7,12 +7,12 @@ category: "目覚め"
 categorySlug: "mezame"
 publishedAt: "2026-07-09"
 publishedLabel: "2026年7月9日"
-heroImage: "/assets/images/hero-main.jpg"
-heroAlt: "ハワイ"
+heroImage: "/assets/images/card-leaf.jpg"
+heroAlt: "青空"
 theme: "default"
 sourceFile: "article-allowed.html"
-tags: ["目覚め", "ホ・オポノポノ", "ハワイ", "クリーニング"]
-authorName: "宇宙を悟り法則を引き寄せる 編集部"
+tags: ["目覚め", "非二元", "Eckhart Tolle", "Ego"]
+authorName: "宇宙を悟り法則を引き寄せる"
 readTime: "9 min read"
 reactionLabel: "拍手"
 reactionCount: 354

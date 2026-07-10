@@ -2,7 +2,7 @@
 slug: tsushin
 title: "宇宙通信・創刊号"
 subtitle: "意識の多次元的な構造と未来への架け橋"
-description: "私たちの思考はどこからやってくるのか。個人的なマインドを超えた「大いなる源泉（ソース）」からの通信ログ。"
+description: "私たちの思考はどこからやってくるのか。個人的なマインドを超えた「宇宙を悟り法則を引き寄せる」からの通信ログ。"
 category: "宇宙通信"
 categorySlug: "tsushin"
 publishedAt: "2026-07-09"
@@ -12,6 +12,7 @@ heroAlt: "水面"
 theme: "cosmic"
 sourceFile: "article-tsushin.html"
 tags: ["宇宙通信", "受信ログ"]
+authorName: "宇宙を悟り法則を引き寄せる"
 reactionLabel: "同調"
 reactionCount: 194
 commentLabel: "交信"
@@ -20,7 +21,7 @@ commentCount: 12
 
 <div class="article-container" style="margin-bottom: var(--sp-xl);">
   <div style="border: 1px solid #ffffff; padding: var(--sp-md) var(--sp-lg); background: #000000; font-family: var(--font-sans); font-size: var(--fs-xs); line-height: 1.6; color: #ffffff;">
-    <div style="display: flex; margin-bottom: 2px;"><span style="font-weight: var(--fw-bold); width: 100px; color: #cccccc;">発信源 (Source):</span><span style="color: #ffffff;">大いなる源泉</span></div>
+    <div style="display: flex; margin-bottom: 2px;"><span style="font-weight: var(--fw-bold); width: 100px; color: #cccccc;">発信源 (Source):</span><span style="color: #ffffff;">宇宙を悟り法則を引き寄せる</span></div>
     <div style="display: flex; margin-bottom: 2px;"><span style="font-weight: var(--fw-bold); width: 100px; color: #cccccc;">受信者 (Receiver):</span><span style="color: #ffffff; font-weight: var(--fw-bold);">宇宙からの通信を受信している「あなた」へ</span></div>
     <div style="display: flex; margin-bottom: 2px;"><span style="font-weight: var(--fw-bold); width: 100px; color: #cccccc;">地球時間 (Time):</span><span style="color: #ffffff;">2026年7月9日 07:00</span></div>
     <div style="display: flex;"><span style="font-weight: var(--fw-bold); width: 100px; color: #cccccc;">通信題 (Subject):</span><span style="color: #ffffff; font-weight: var(--fw-bold);">意識の多次元的な構造と未来への架け橋</span></div>

@@ -1,7 +1,8 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection, render } from 'astro:content';
 import { categories } from '../../data/categories';
 import CategoryLayout from '../../layouts/CategoryLayout.astro';
+import KakeraLayout from '../../layouts/KakeraLayout.astro';
 
 export async function getStaticPaths() {
   const articles = await getCollection('articles');
@@ -37,12 +38,31 @@ const {
   theme,
   articles,
 } = Astro.props;
+
+const isKakera = categorySlug === 'kakera';
+const activeArticle = isKakera && articles.length > 0 ? articles[0] : null;
+const { Content } = activeArticle ? await render(activeArticle) : { Content: null };
 ---
-<CategoryLayout
-  categorySlug={categorySlug}
-  categoryName={categoryName}
-  categoryEnglishName={categoryEnglishName}
-  categoryDescription={categoryDescription}
-  theme={theme}
-  articles={articles}
-/>
+{
+  isKakera && activeArticle ? (
+    <KakeraLayout
+      title={categoryName}
+      description={categoryDescription}
+      articles={articles}
+      activeArticle={activeArticle}
+      activeSlug={activeArticle.data.slug}
+      isArticlePage={false}
+    >
+      <Content />
+    </KakeraLayout>
+  ) : (
+    <CategoryLayout
+      categorySlug={categorySlug}
+      categoryName={categoryName}
+      categoryEnglishName={categoryEnglishName}
+      categoryDescription={categoryDescription}
+      theme={theme}
+      articles={articles}
+    />
+  )
+}

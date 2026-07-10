@@ -12,7 +12,7 @@ heroAlt: "言葉が現実を切り取る前の世界"
 theme: "default"
 sourceFile: "article-kakera-2.html"
 tags: ["思考の欠片", "沈黙", "言葉"]
-authorName: "宇宙を悟り法則を引き寄せる 編集部"
+authorName: "宇宙を悟り法則を引き寄せる"
 readTime: "8 min read"
 reactionLabel: "拍手"
 reactionCount: 318

@@ -96,8 +96,8 @@
 
   /* Card border-weight personalities — not all the same line thickness */
   --border-card-a: 1px solid var(--color-border);
-  --border-card-b: none;
-  --border-card-c: 1px solid rgba(0,0,0,0.06);
+  --border-card-b: 1px solid rgba(26,26,26,0.12);
+  --border-card-c: 1px solid rgba(26,26,26,0.18);
   --border-card-d: 1px solid var(--color-border);
 
   /* Micro-tilt personalities */

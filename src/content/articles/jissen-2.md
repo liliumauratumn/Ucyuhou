@@ -12,7 +12,7 @@ heroAlt: "ホ・オポノポノの実践：記憶のクリーニング"
 theme: "default"
 sourceFile: "article-jissen-2.html"
 tags: ["実践", "ホ・オポノポノ", "クリーニング"]
-authorName: "宇宙を悟り法則を引き寄せる 編集部"
+authorName: "宇宙を悟り法則を引き寄せる"
 readTime: "8 min read"
 reactionLabel: "拍手"
 reactionCount: 318

@@ -12,7 +12,7 @@ heroAlt: "静寂な水面"
 theme: "default"
 sourceFile: "article-hikiyose.html"
 tags: ["引き寄せ", "Abraham-Hicks", "抵抗の手放し", "Vortex"]
-authorName: "宇宙を悟り法則を引き寄せる 編集部"
+authorName: "宇宙を悟り法則を引き寄せる"
 readTime: "7 min read"
 reactionLabel: "拍手"
 reactionCount: 412

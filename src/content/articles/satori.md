@@ -12,7 +12,7 @@ heroAlt: "静けさの中の書物"
 theme: "default"
 sourceFile: "article-satori.html"
 tags: ["悟り", "非二元", "Eckhart Tolle", "Buddha"]
-authorName: "宇宙を悟り法則を引き寄せる 編集部"
+authorName: "宇宙を悟り法則を引き寄せる"
 readTime: "8 min read"
 reactionLabel: "拍手"
 reactionCount: 318

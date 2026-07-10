@@ -74,10 +74,10 @@
 }
 
 .article-author__avatar {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background: var(--color-border);
+  width: 70px;
+  height: 70px;
+  border-radius: 0;
+  object-fit: cover;
   flex-shrink: 0;
 }
 
@@ -498,4 +498,16 @@ body.theme-inverted .article-subtitle,
 body.theme-inverted .article-related__item {
   font-family: var(--font-sans) !important;
   letter-spacing: 0.03em !important;
+}
+
+body.theme-inverted .article-author__avatar {
+  filter: invert(1);
+}
+
+body.theme-inverted .article-author__name {
+  color: #ffffff !important;
+}
+
+body.theme-inverted .article-author__meta {
+  color: #cccccc !important;
 }

@@ -7,12 +7,12 @@ category: "悟り"
 categorySlug: "satori"
 publishedAt: "2026-07-09"
 publishedLabel: "2026年7月9日"
-heroImage: "/assets/images/hero-main.jpg"
-heroAlt: "ハワイ"
+heroImage: "/assets/images/article-tolle.jpg"
+heroAlt: "いまここの光"
 theme: "default"
 sourceFile: "article-tolle.html"
-tags: ["悟り", "ホ・オポノポノ", "ハワイ", "クリーニング"]
-authorName: "宇宙を悟り法則を引き寄せる 編集部"
+tags: ["悟り", "非二元", "いまここ", "Eckhart Tolle"]
+authorName: "宇宙を悟り法則を引き寄せる"
 readTime: "9 min read"
 reactionLabel: "拍手"
 reactionCount: 354

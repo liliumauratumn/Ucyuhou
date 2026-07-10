@@ -8,6 +8,25 @@ interface Props {
 }
 
 const { activeSection, navigationEnabled = true, searchEnabled = false } = Astro.props;
+
+const orderedSlugs = [
+  "satori",
+  "hikiyose",
+  "law",
+  "mezame",
+  "bunsho",
+  "jissen",
+  "tsushin",
+  "kakera"
+];
+
+const orderedCategories = [...categories].sort((a, b) => {
+  const indexA = orderedSlugs.indexOf(a.slug);
+  const indexB = orderedSlugs.indexOf(b.slug);
+  const posA = indexA !== -1 ? indexA : 999;
+  const posB = indexB !== -1 ? indexB : 999;
+  return posA - posB;
+});
 ---
 <header class="site-header" id="site-header">
   <div class="header-top-bar">
@@ -21,7 +40,7 @@ const { activeSection, navigationEnabled = true, searchEnabled = false } = Astro
   <nav class="header-nav-bar" aria-label="メインナビゲーション">
     <div class="header-nav-inner">
       <ul class="header-nav-list" id="nav-list">
-        {categories.map((category) => (
+        {orderedCategories.map((category) => (
           <li>
             {navigationEnabled ? (
               <a

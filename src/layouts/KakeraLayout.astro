@@ -1,0 +1,86 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import '../styles/pages/kakera.css';
+
+interface Props {
+  title: string;
+  description: string;
+  articles: any[];
+  activeArticle: any;
+  activeSlug: string;
+  isArticlePage: boolean;
+}
+
+const {
+  title,
+  description,
+  articles,
+  activeArticle,
+  activeSlug,
+  isArticlePage,
+} = Astro.props;
+
+function getPlainExcerpt(body: string): string {
+  if (!body) return "";
+  let text = body;
+  text = text.replace(/<[^>]*>/g, ""); // Remove HTML tags
+  text = text.replace(/\[([^\]]+)\]\([^)]+\)/g, "$1"); // Remove markdown links, keep label
+  text = text.replace(/^#+\s+/gm, ""); // Remove heading symbols
+  text = text.replace(/(\*\*|__)(.*?)\1/g, "$2"); // Remove bold
+  text = text.replace(/(\*|_)(.*?)\1/g, "$2"); // Remove italic
+  text = text.replace(/[\r\n]+/g, " "); // Replace newlines with space
+  text = text.replace(/\s+/g, " "); // Collapse multiple spaces
+  return text.trim();
+}
+---
+<BaseLayout title={`${title} | 宇宙を悟り法則を引き寄せる`} description={description}>
+  <SiteHeader activeSection="kakera" navigationEnabled={true} searchEnabled={true} />
+
+  <div class={`kakera-container ${isArticlePage ? 'kakera-layout--article' : 'kakera-layout--list'}`}>
+    <div class="kakera-inner site-container">
+      <!-- Left Side: List Sidebar -->
+      <aside class="kakera-sidebar">
+        <div class="kakera-sidebar__header">
+          <h2>思考の欠片</h2>
+          <p class="kakera-sidebar__english">Fragments of Thought</p>
+        </div>
+        <ul class="kakera-list">
+          {articles.map(item => (
+            <li class={`kakera-list__item ${item.data.slug === activeSlug ? 'is-active' : ''}`}>
+              <a href={`/articles/${item.data.slug}/`}>
+                <h3>{item.data.title}</h3>
+                <span class="kakera-list__date">{item.data.publishedLabel}</span>
+                <p class="kakera-list__excerpt">{getPlainExcerpt(item.body)}</p>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </aside>
+
+      <!-- Right Side: Content Area -->
+      <main class="kakera-content">
+        <a href="/category/kakera/" class="kakera-back-btn" aria-label="一覧に戻る">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14" style="margin-right: 4px; display: inline-block; vertical-align: middle;">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+          一覧に戻る
+        </a>
+        
+        <article class="kakera-article">
+          <header class="kakera-article__header">
+            <span class="kakera-category-tag">思考の欠片</span>
+            <h1>{activeArticle.data.title}</h1>
+            <time>{activeArticle.data.publishedLabel}</time>
+          </header>
+          <div class="kakera-body">
+            <slot /> <!-- Rendered markdown body -->
+          </div>
+        </article>
+      </main>
+    </div>
+  </div>
+
+  <SiteFooter categoryLinksEnabled={true} staticLinksEnabled={true} />
+</BaseLayout>

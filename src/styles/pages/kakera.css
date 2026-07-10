@@ -1,0 +1,298 @@
+/* ============================================================
+   KAKERA NOTEBOOK PAGE — 思考の欠片 / Ucyuhou
+   ============================================================ */
+
+.kakera-container {
+  margin-top: 0;
+  margin-bottom: var(--sp-2xl);
+  background: var(--color-bg-subtle);
+  border-top: 1px solid var(--color-border);
+}
+
+.kakera-sidebar__header {
+  padding: var(--sp-md) var(--sp-sm) var(--sp-sm);
+  border-bottom: 2px solid var(--color-text);
+  margin-bottom: var(--sp-md);
+}
+
+.kakera-sidebar__header h2 {
+  font-family: var(--font-sans);
+  font-size: var(--fs-md);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--ls-wide);
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.kakera-sidebar__english {
+  font-size: var(--fs-xs);
+  color: var(--color-text-tertiary);
+  letter-spacing: var(--ls-widest);
+  text-transform: uppercase;
+  margin: 2px 0 0 0;
+}
+
+/* --- Listing --- */
+.kakera-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-sm);
+}
+
+.kakera-list__item {
+  border: 1px solid var(--color-border);
+  background: var(--color-bg);
+  transition: border-color var(--transition-fast), background var(--transition-fast), transform var(--transition-base);
+  border-radius: 0 !important; /* Strictly no rounded corners */
+}
+
+.kakera-list__item a {
+  display: block;
+  padding: var(--sp-md);
+  color: var(--color-text);
+  text-decoration: none;
+  width: 100%;
+  height: 100%;
+}
+
+.kakera-list__item h3 {
+  font-family: var(--font-sans);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-tight);
+  margin: 0 0 var(--sp-xs) 0;
+  color: var(--color-text);
+}
+
+.kakera-list__date {
+  font-size: var(--fs-xs);
+  color: var(--color-text-tertiary);
+  display: block;
+  margin-bottom: var(--sp-xs);
+}
+
+.kakera-list__excerpt {
+  font-family: var(--font-sans);
+  font-size: var(--fs-xs);
+  color: var(--color-text-tertiary);
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+}
+
+/* Hover & Active States with required noise tilts */
+.kakera-list__item:hover {
+  border-color: var(--color-text);
+  background: var(--color-bg-subtle);
+}
+
+.kakera-list__item:nth-child(even):hover {
+  transform: rotate(-0.3deg) scale(1.005);
+}
+
+.kakera-list__item:nth-child(odd):hover {
+  transform: rotate(0.2deg) scale(1.005);
+}
+
+.kakera-list__item.is-active {
+  border: 1px solid var(--color-text);
+  background: var(--color-highlight-bg);
+  transform: none !important; /* Snap solid when active */
+}
+
+.kakera-list__item.is-active h3 {
+  color: var(--color-text);
+}
+
+/* --- Article Details Area --- */
+.kakera-article__header {
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: var(--sp-md);
+  margin-bottom: var(--sp-xl);
+}
+
+.kakera-category-tag {
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--ls-wide);
+  color: var(--color-text-secondary);
+  background: var(--color-tag-bg);
+  padding: 0.2em 0.5em;
+  text-transform: uppercase;
+  display: inline-block;
+  margin-bottom: var(--sp-sm);
+  border-radius: 0 !important; /* Strictly no rounded corners */
+}
+
+.kakera-article h1 {
+  font-family: var(--font-sans);
+  font-size: var(--fs-2xl);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-tight);
+  margin: 0 0 var(--sp-xs) 0;
+}
+
+.kakera-article time {
+  font-size: var(--fs-xs);
+  color: var(--color-text-tertiary);
+  display: block;
+}
+
+/* --- Kakera Simple Content Styles --- */
+.kakera-body {
+  font-family: var(--font-sans);
+  font-size: clamp(1rem, 0.97rem + 0.2vw, 1.1rem);
+  font-weight: 400;
+  line-height: 1.85;
+  color: var(--color-text);
+  max-width: 60ch;
+}
+
+.kakera-body p {
+  margin: 0 0 var(--sp-md) 0;
+}
+
+.kakera-body strong,
+.kakera-body b,
+.kakera-body h4 {
+  font-weight: 400;
+}
+
+.kakera-body h2,
+.kakera-body h3 {
+  font-family: var(--font-sans);
+  font-size: 1.25rem; /* Slightly larger than normal body text */
+  font-weight: 400; /* Strictly not bold */
+  color: var(--color-text);
+  margin: var(--sp-xl) 0 var(--sp-sm) 0;
+  border: none;
+  padding: 0;
+}
+
+.kakera-body blockquote {
+  font-family: var(--font-sans);
+  border-left: 2px solid var(--color-border);
+  padding-left: var(--sp-md);
+  margin: var(--sp-md) 0 var(--sp-md) var(--sp-sm);
+  color: var(--color-text-secondary);
+  background: none;
+  border-top: none;
+  border-right: none;
+  border-bottom: none;
+  border-radius: 0;
+}
+
+/* Reset dropcaps inside Kakera articles to normal size and styling */
+.kakera-body .dropcap {
+  font-family: inherit !important;
+  font-weight: inherit !important;
+  float: none !important;
+  font-size: inherit !important;
+  line-height: inherit !important;
+  padding: 0 !important;
+  color: inherit !important;
+  transform: none !important;
+  display: inline !important;
+  margin: 0 !important;
+}
+
+.kakera-back-btn {
+  display: none;
+}
+
+/* --- Responsive CSS --- */
+
+/* --- Desktop Layout (min-width: 769px) --- */
+@media (min-width: 769px) {
+  .kakera-container {
+    padding-top: clamp(32px, 3vw, 48px);
+  }
+
+  .kakera-inner {
+    display: grid;
+    grid-template-columns: 270px minmax(0, 1fr);
+    column-gap: 36px;
+    width: min(calc(100% - 48px), 960px);
+    margin-inline: auto;
+    align-items: start;
+    position: relative;
+    box-sizing: border-box;
+  }
+
+  .kakera-sidebar {
+    position: sticky;
+    top: calc(106px + clamp(32px, 3vw, 48px)); /* Header height + container top padding */
+    height: calc(100dvh - 106px - clamp(32px, 3vw, 48px));
+    overflow-y: auto;
+    border-right: 1px solid var(--color-border);
+    padding-right: var(--sp-md);
+    scrollbar-width: thin;
+    box-sizing: border-box;
+  }
+
+  .kakera-content {
+    min-height: calc(100dvh - 106px - clamp(32px, 3vw, 48px));
+    padding: var(--sp-sm) 0 var(--sp-2xl) 0;
+    overflow: visible;
+    width: 100%;
+    max-width: 640px;
+    min-width: 0;
+    box-sizing: border-box;
+    margin-top: -28px; /* Offset the category tag height to align sidebar header and article h1 */
+  }
+}
+
+/* --- Mobile Layout (max-width: 768px) --- */
+@media (max-width: 768px) {
+  .kakera-inner {
+    display: block;
+    width: min(calc(100% - 40px), 640px);
+    margin-inline: auto;
+    box-sizing: border-box;
+  }
+
+  /* List View (/category/kakera/): Show sidebar list, hide body details */
+  .kakera-layout--list .kakera-sidebar {
+    display: block;
+    width: 100%;
+    padding: var(--sp-md) 0;
+  }
+  .kakera-layout--list .kakera-content {
+    display: none;
+  }
+
+  /* Article View (/articles/kakera-X/): Show body details, hide sidebar list */
+  .kakera-layout--article .kakera-sidebar {
+    display: none;
+  }
+  .kakera-layout--article .kakera-content {
+    display: block;
+    width: 100%;
+    padding: var(--sp-md) 0 var(--sp-xl);
+  }
+
+  .kakera-back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--sp-xs);
+    margin-bottom: var(--sp-md);
+    text-decoration: none;
+    color: var(--color-text-secondary);
+    font-size: var(--fs-xs);
+    font-weight: var(--fw-medium);
+    border: 1px solid var(--color-border);
+    padding: 0.4rem 0.8rem;
+    background: var(--color-bg-subtle);
+    border-radius: 0 !important; /* Strictly no rounded corners */
+  }
+
+  .kakera-back-btn:hover {
+    background: var(--color-bg);
+    border-color: var(--color-text);
+  }
+}

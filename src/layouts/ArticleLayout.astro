@@ -77,51 +77,16 @@ const bodyClass = theme === 'cosmic' ? 'theme-inverted' : undefined;
 
         {subtitle && <p class="article-subtitle">{subtitle}</p>}
 
-        {authorName && (
-          <div class="article-author">
-            <div class="article-author__avatar" aria-hidden="true"></div>
-            <div class="article-author__info">
-              <span class="article-author__name">{authorName}</span>
-              <span class="article-author__meta">
-                {readTime ? `${readTime} · ` : ''}{publishedLabel}
-              </span>
-            </div>
-          </div>
-        )}
-      </header>
-
-      <!-- Action Bar -->
-      <div class="article-container">
-        <div class="article-action-bar">
-          <div class="action-bar__left">
-            <button class="action-bar__item" aria-label={reactionLabel} type="button" disabled aria-disabled="true">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M20.27 16.265l-7.298 2.849A1 1 0 0 1 12 19.202l-.972-3.048a1 1 0 0 1 .63-1.27l2.53-.987"/>
-                <path d="M14.188 14.897l1.673-5.263a1.2 1.2 0 1 1 2.288.729l-.837 2.632"/>
-                <path d="M18.15 10.363l.838-2.632a1.2 1.2 0 0 1 2.288.729L19.6 13.723"/>
-                <path d="M12.515 9.634l1.254-3.942a1.2 1.2 0 1 1 2.288.729l-1.254 3.942"/>
-                <path d="M10.232 13.576l1.882-5.918a1.2 1.2 0 1 1 2.288.729l-.611 1.922"/>
-                <path d="M3.616 17.96L5.58 10.29a2 2 0 0 1 2.473-1.39l.453.144"/>
-                <path d="M5.197 20.63l-.525 1.652a1.2 1.2 0 0 1-2.288-.73l1.18-3.71"/>
-              </svg>
-              <span class="action-bar__count">{reactionCount}</span>
-            </button>
-            <button class="action-bar__item" aria-label={commentLabel} type="button" disabled aria-disabled="true">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-              </svg>
-              <span class="action-bar__count">{commentCount}</span>
-            </button>
-          </div>
-          <div class="action-bar__right">
-            <button class="action-bar__item" aria-label="ブックマーク" type="button" disabled aria-disabled="true">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/>
-              </svg>
-            </button>
+        <div class="article-author">
+          <img class="article-author__avatar" src="/assets/images/Ucyuhou_bk_70px.png" alt="宇宙を悟り法則を引き寄せる" />
+          <div class="article-author__info">
+            <span class="article-author__name">{authorName || "宇宙を悟り法則を引き寄せる"}</span>
+            <span class="article-author__meta">
+              {readTime ? `${readTime} · ` : ''}{publishedLabel}
+            </span>
           </div>
         </div>
-      </div>
+      </header>
 
       <!-- Hero Image -->
       <div class="article-hero">

@@ -12,7 +12,7 @@ heroAlt: "自我の境界線が溶ける瞬間"
 theme: "default"
 sourceFile: "article-kakera-1.html"
 tags: ["思考の欠片", "非二元", "気づき"]
-authorName: "宇宙を悟り法則を引き寄せる 編集部"
+authorName: "宇宙を悟り法則を引き寄せる"
 readTime: "8 min read"
 reactionLabel: "拍手"
 reactionCount: 318

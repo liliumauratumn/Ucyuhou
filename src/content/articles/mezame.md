@@ -12,7 +12,7 @@ heroAlt: "廊下"
 theme: "default"
 sourceFile: "article-mezame.html"
 tags: ["目覚め", "純粋意識", "観察者", "気づき"]
-authorName: "宇宙を悟り法則を引き寄せる 編集部"
+authorName: "宇宙を悟り法則を引き寄せる"
 readTime: "6 min read"
 reactionLabel: "拍手"
 reactionCount: 289

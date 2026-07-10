@@ -7,12 +7,12 @@ category: "宇宙の法則"
 categorySlug: "law"
 publishedAt: "2026-07-09"
 publishedLabel: "2026年7月9日"
-heroImage: "/assets/images/hero-main.jpg"
-heroAlt: "ハワイ"
+heroImage: "/assets/images/article-mirror.jpg"
+heroAlt: "幾何学的な反射"
 theme: "default"
 sourceFile: "article-mirror.html"
-tags: ["宇宙の法則", "ホ・オポノポノ", "ハワイ", "クリーニング"]
-authorName: "宇宙を悟り法則を引き寄せる 編集部"
+tags: ["宇宙の法則", "フラクタル", "鏡面反射", "配置"]
+authorName: "宇宙を悟り法則を引き寄せる"
 readTime: "9 min read"
 reactionLabel: "拍手"
 reactionCount: 354
