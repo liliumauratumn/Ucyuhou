@@ -33,14 +33,10 @@ const articles = defineCollection({
     heroImage: z.string(),
     heroAlt: z.string(),
     theme: z.enum(['default', 'cosmic']),
-    sourceFile: z.string(),
+    sourceFile: z.string().optional(),
     tags: z.array(z.string()).optional(),
-    authorName: z.string().optional(),
+    authorName: z.literal('宇宙を悟り法則を引き寄せる'),
     readTime: z.string().optional(),
-    reactionLabel: z.string().optional(),
-    reactionCount: z.number().optional(),
-    commentLabel: z.string().optional(),
-    commentCount: z.number().optional(),
   })
 });
 

@@ -14,10 +14,6 @@ sourceFile: "article-scale.html"
 tags: ["引き寄せ", "ホ・オポノポノ", "ハワイ", "クリーニング"]
 authorName: "宇宙を悟り法則を引き寄せる"
 readTime: "9 min read"
-reactionLabel: "拍手"
-reactionCount: 354
-commentLabel: "コメント"
-commentCount: 28
 ---
 
 感情のスケールを上げることに必死になるあまり、今のネガティブな自分を否定しては本末転倒である。すべての感情を許容する広大なスペースに立つ。

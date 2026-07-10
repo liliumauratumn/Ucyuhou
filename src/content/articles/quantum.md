@@ -14,10 +14,6 @@ sourceFile: "article-quantum.html"
 tags: ["引き寄せ", "ホ・オポノポノ", "ハワイ", "クリーニング"]
 authorName: "宇宙を悟り法則を引き寄せる"
 readTime: "9 min read"
-reactionLabel: "拍手"
-reactionCount: 354
-commentLabel: "コメント"
-commentCount: 28
 ---
 
 私たちが現実を観察するとき、そこには観察者の意識が不可避に介入する。これは素朴な願望実現論ではないが、世界が固い物質ではなく確率の波であることを示唆している。

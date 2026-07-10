@@ -14,10 +14,6 @@ sourceFile: "article-allowed.html"
 tags: ["目覚め", "非二元", "Eckhart Tolle", "Ego"]
 authorName: "宇宙を悟り法則を引き寄せる"
 readTime: "9 min read"
-reactionLabel: "拍手"
-reactionCount: 354
-commentLabel: "コメント"
-commentCount: 28
 ---
 
 何者かになる必要はない。ただ呼吸し、存在していること自体が、宇宙から完全に許容され、支えられている。

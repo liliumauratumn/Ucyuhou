@@ -14,10 +14,6 @@ sourceFile: "article-vortex.html"
 tags: ["引き寄せ", "ホ・オポノポノ", "ハワイ", "クリーニング"]
 authorName: "宇宙を悟り法則を引き寄せる"
 readTime: "9 min read"
-reactionLabel: "拍手"
-reactionCount: 354
-commentLabel: "コメント"
-commentCount: 28
 ---
 
 ボルテックスの中では、問題に執着する個人的なエゴは力を失っている。そこには深い感謝と、大きな全体性への降伏がある。

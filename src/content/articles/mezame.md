@@ -14,10 +14,6 @@ sourceFile: "article-mezame.html"
 tags: ["目覚め", "純粋意識", "観察者", "気づき"]
 authorName: "宇宙を悟り法則を引き寄せる"
 readTime: "6 min read"
-reactionLabel: "拍手"
-reactionCount: 289
-commentLabel: "コメント"
-commentCount: 34
 ---
 
 <p class="dropcap-wrap"><span class="dropcap">目</span>覚め（Awakening）とは、何か特別な悟りの体験を神秘的に追体験することではない。それは意識の焦点が、「意識されている中身（思考、感情、外界）」から、「それらすべてが現れて消えていく背景である意識の空間そのもの」へと完全に移行することである。</p>

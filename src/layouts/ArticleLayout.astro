@@ -40,13 +40,6 @@ const {
   slug,
 } = Astro.props;
 
-// Get metadata values for action bar
-const article = (await getCollection('articles')).find(item => item.data.slug === slug);
-const reactionLabel = article?.data.reactionLabel ?? "拍手";
-const reactionCount = article?.data.reactionCount ?? 0;
-const commentLabel = article?.data.commentLabel ?? "コメント";
-const commentCount = article?.data.commentCount ?? 0;
-
 // Fetch related articles (same category, excluding current)
 const allArticles = await getCollection('articles');
 const relatedArticles = allArticles

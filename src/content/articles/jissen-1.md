@@ -14,10 +14,6 @@ sourceFile: "article-jissen-1.html"
 tags: ["実践", "ラマナ・マハルシ", "自己探求"]
 authorName: "宇宙を悟り法則を引き寄せる"
 readTime: "8 min read"
-reactionLabel: "拍手"
-reactionCount: 318
-commentLabel: "コメント"
-commentCount: 42
 ---
 
 <p class="dropcap-wrap"><span class="dropcap">ラ</span>マナ・マハルシが提唱した「自己探求（アートマ・ヴィチャーラ）」は、極めてシンプルかつ直接的な実践である。</p>

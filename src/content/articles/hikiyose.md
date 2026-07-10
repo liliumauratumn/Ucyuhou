@@ -14,10 +14,6 @@ sourceFile: "article-hikiyose.html"
 tags: ["引き寄せ", "Abraham-Hicks", "抵抗の手放し", "Vortex"]
 authorName: "宇宙を悟り法則を引き寄せる"
 readTime: "7 min read"
-reactionLabel: "拍手"
-reactionCount: 412
-commentLabel: "コメント"
-commentCount: 59
 ---
 
 <p class="dropcap-wrap"><span class="dropcap">引</span>き寄せの法則（Law of Attraction）における最大の罠は、「強く願うこと」が往々にして「それが手に入っていない現実」を宇宙に放射してしまうことである。エイブラハム・ヒックスが伝えるチャネリング思想の核心は、意志力による現実創造ではなく、純粋な非抵抗状態の実現である。</p>

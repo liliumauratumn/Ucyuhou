@@ -14,10 +14,6 @@ sourceFile: "article-maharshi.html"
 tags: ["悟り", "ホ・オポノポノ", "ハワイ", "クリーニング"]
 authorName: "宇宙を悟り法則を引き寄せる"
 readTime: "9 min read"
-reactionLabel: "拍手"
-reactionCount: 354
-commentLabel: "コメント"
-commentCount: 28
 ---
 
 「私は誰か」という問いは、答えを見つけるためのものではない。思考をその源泉へと差し向けるための静かなる道具である。

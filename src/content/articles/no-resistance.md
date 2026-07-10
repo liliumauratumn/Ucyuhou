@@ -14,10 +14,6 @@ sourceFile: "article-no-resistance.html"
 tags: ["引き寄せ", "ホ・オポノポノ", "ハワイ", "クリーニング"]
 authorName: "宇宙を悟り法則を引き寄せる"
 readTime: "9 min read"
-reactionLabel: "拍手"
-reactionCount: 354
-commentLabel: "コメント"
-commentCount: 28
 ---
 
 引き寄せとは「力で引く」ことではない。ブロックしていた障害物（疑いや焦り）がなくなったとき、川の水が自然に流れ込む現象である。

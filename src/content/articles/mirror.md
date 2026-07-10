@@ -14,10 +14,6 @@ sourceFile: "article-mirror.html"
 tags: ["宇宙の法則", "フラクタル", "鏡面反射", "配置"]
 authorName: "宇宙を悟り法則を引き寄せる"
 readTime: "9 min read"
-reactionLabel: "拍手"
-reactionCount: 354
-commentLabel: "コメント"
-commentCount: 28
 ---
 
 鏡という比喩以上に、現実はあなたの内面の論理的帰結として「配置」される。内側で争いが終われば、外側の戦場もまた自然消滅する。

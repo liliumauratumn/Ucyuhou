@@ -14,10 +14,6 @@ sourceFile: "article-jissen-2.html"
 tags: ["実践", "ホ・オポノポノ", "クリーニング"]
 authorName: "宇宙を悟り法則を引き寄せる"
 readTime: "8 min read"
-reactionLabel: "拍手"
-reactionCount: 318
-commentLabel: "コメント"
-commentCount: 42
 ---
 
 <p class="dropcap-wrap"><span class="dropcap">古</span>代ハワイの叡智を現代に応用した「セルフアイデンティティ・スルー・ホ・オポノポノ（SITH）」の実践は、すべてを「自分の責任」として引き受けることから始まる。</p>

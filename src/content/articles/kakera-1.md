@@ -14,10 +14,6 @@ sourceFile: "article-kakera-1.html"
 tags: ["思考の欠片", "非二元", "気づき"]
 authorName: "宇宙を悟り法則を引き寄せる"
 readTime: "8 min read"
-reactionLabel: "拍手"
-reactionCount: 318
-commentLabel: "コメント"
-commentCount: 42
 ---
 
 <p class="dropcap-wrap"><span class="dropcap">夕</span>暮れの空を見ていた時、ふと奇妙な感覚に襲われた。</p>

@@ -14,10 +14,6 @@ sourceFile: "article-buddha.html"
 tags: ["悟り", "ホ・オポノポノ", "ハワイ", "クリーニング"]
 authorName: "宇宙を悟り法則を引き寄せる"
 readTime: "9 min read"
-reactionLabel: "拍手"
-reactionCount: 354
-commentLabel: "コメント"
-commentCount: 28
 ---
 
 ブッダが説いた「渇愛」とエイブラハムが説く「抵抗」。形は違えど、どちらも「いまここにあるがままの現実」への拒絶を問題としている。

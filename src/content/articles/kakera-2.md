@@ -14,10 +14,6 @@ sourceFile: "article-kakera-2.html"
 tags: ["思考の欠片", "沈黙", "言葉"]
 authorName: "宇宙を悟り法則を引き寄せる"
 readTime: "8 min read"
-reactionLabel: "拍手"
-reactionCount: 318
-commentLabel: "コメント"
-commentCount: 42
 ---
 
 <p class="dropcap-wrap"><span class="dropcap">「木</span>」というラベルを貼った瞬間、私たちは目の前にある生の現実を見ることをやめ、過去の記憶の中にある「木の概念」を見るようになる。</p>

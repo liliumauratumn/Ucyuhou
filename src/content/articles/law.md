@@ -14,10 +14,6 @@ sourceFile: "article-law.html"
 tags: ["宇宙の法則", "文書", "エメラルドタブレット", "Hermeticism"]
 authorName: "宇宙を悟り法則を引き寄せる"
 readTime: "10 min read"
-reactionLabel: "拍手"
-reactionCount: 528
-commentLabel: "コメント"
-commentCount: 71
 ---
 
 <p class="dropcap-wrap"><span class="dropcap">エ</span>メラルド・タブレット（Emerald Tablet）は、中世の錬金術師たちから現代のオカルティズム、さらにはスピリチュアル思想に至るまで、最高峰の知恵の経典として読み継がれてきた謎のテキストである。ヘルメス・トリスメギストスによって記されたとされるこの短い文書には、宇宙法則のすべてが暗号のように圧縮されている。</p>

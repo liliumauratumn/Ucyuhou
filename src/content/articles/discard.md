@@ -14,10 +14,6 @@ sourceFile: "article-discard.html"
 tags: ["引き寄せ", "ホ・オポノポノ", "ハワイ", "クリーニング"]
 authorName: "宇宙を悟り法則を引き寄せる"
 readTime: "9 min read"
-reactionLabel: "拍手"
-reactionCount: 354
-commentLabel: "コメント"
-commentCount: 28
 ---
 
 リストを書くことで「私には今これがない」という強烈な確認作業になっていないか。欠乏のリストを燃やし、ただ今日の空の美しさに浸ること。

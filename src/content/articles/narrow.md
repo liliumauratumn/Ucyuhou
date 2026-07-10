@@ -14,10 +14,6 @@ sourceFile: "article-narrow.html"
 tags: ["悟り", "ホ・オポノポノ", "ハワイ", "クリーニング"]
 authorName: "宇宙を悟り法則を引き寄せる"
 readTime: "9 min read"
-reactionLabel: "拍手"
-reactionCount: 354
-commentLabel: "コメント"
-commentCount: 28
 ---
 
 私たちは世界そのものではなく、世界について自分が語っている「説明」を生きている。思考が止まるとき、世界は元の広大さを取り戻す。

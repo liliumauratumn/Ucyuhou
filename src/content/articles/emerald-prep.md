@@ -14,10 +14,6 @@ sourceFile: "article-emerald-prep.html"
 tags: ["文書", "エメラルドタブレット", "ヘルメス思想", "錬金術"]
 authorName: "宇宙を悟り法則を引き寄せる"
 readTime: "9 min read"
-reactionLabel: "拍手"
-reactionCount: 354
-commentLabel: "コメント"
-commentCount: 28
 ---
 
 錬金術のメタファーは、金属の変容ではなく魂の変容を指している。この前提がなければ、タブレットは単なる魔術書にしか見えないだろう。

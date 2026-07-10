@@ -14,10 +14,6 @@ sourceFile: "article-emerald.html"
 tags: ["文書", "ホ・オポノポノ", "ハワイ", "クリーニング"]
 authorName: "宇宙を悟り法則を引き寄せる"
 readTime: "9 min read"
-reactionLabel: "拍手"
-reactionCount: 354
-commentLabel: "コメント"
-commentCount: 28
 ---
 
 マクロコスモスとミクロコスモスの照応関係。私たちの内面が整うとき、外側の現実もまた幾何学的な必然性をもって整っていく。

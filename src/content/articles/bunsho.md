@@ -14,10 +14,6 @@ sourceFile: "article-bunsho.html"
 tags: ["文書", "ホ・オポノポノ", "ハワイ", "クリーニング"]
 authorName: "宇宙を悟り法則を引き寄せる"
 readTime: "9 min read"
-reactionLabel: "拍手"
-reactionCount: 354
-commentLabel: "コメント"
-commentCount: 28
 ---
 
 <p class="dropcap-wrap"><span class="dropcap">ホ</span>・オポノポノ（Ho'oponopono）は、ハワイに古くから伝わる「問題解決」の儀式である。現代ではモルナ・シメオナ女史、そしてヒューレン博士らによって「セルフ・アイデンティティ・スルー・ホ・オポノポノ（SITH）」として再編集され、4つの言葉を心で唱えるだけの単純なクリーニングメソッドとして世界中に普及した。</p>

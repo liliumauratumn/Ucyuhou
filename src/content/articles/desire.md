@@ -14,10 +14,6 @@ sourceFile: "article-desire.html"
 tags: ["引き寄せ", "ホ・オポノポノ", "ハワイ", "クリーニング"]
 authorName: "宇宙を悟り法則を引き寄せる"
 readTime: "9 min read"
-reactionLabel: "拍手"
-reactionCount: 354
-commentLabel: "コメント"
-commentCount: 28
 ---
 
 純粋な願望には軽やかさがある。執着には「それがなければ私は不幸である」という重い前提が張り付いている。

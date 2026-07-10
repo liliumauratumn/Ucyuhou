@@ -14,10 +14,6 @@ sourceFile: "article-anatta.html"
 tags: ["悟り", "ホ・オポノポノ", "ハワイ", "クリーニング"]
 authorName: "宇宙を悟り法則を引き寄せる"
 readTime: "9 min read"
-reactionLabel: "拍手"
-reactionCount: 354
-commentLabel: "コメント"
-commentCount: 28
 ---
 
 私という固定された実体はどこにも存在しない。心身の絶え間ない変化を観察するとき、自我はプロセスに過ぎないことが見抜かれる。

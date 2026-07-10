@@ -14,10 +14,6 @@ sourceFile: "article-tolle.html"
 tags: ["悟り", "非二元", "いまここ", "Eckhart Tolle"]
 authorName: "宇宙を悟り法則を引き寄せる"
 readTime: "9 min read"
-reactionLabel: "拍手"
-reactionCount: 354
-commentLabel: "コメント"
-commentCount: 28
 ---
 
 過去も未来も、脳内にしか存在しない記憶と予測である。存在するのは常にこの瞬間、「いま」という深遠な静寂だけである。

@@ -55,9 +55,30 @@
   - アニメーション対象の疑似要素等に `backface-visibility: hidden;`、`transform-style: preserve-3d;`、`will-change: transform;`、`translateZ(0)` を適用し、GPUレイヤーに昇格させる。
   - 親要素の `z-index` 降下にトランジション遅延（例: `transition: z-index 0s linear var(--dur-a);`）を設定し、マウスアウト時の重なり順の破綻を防ぐ。
 
+## 記事制作タスクのルーティング
+
+記事の企画、執筆、校閲、画像選定を行う場合、技術移行ルールだけで判断してはならない。必ず次を読むこと。
+
+1. `docs/EDITORIAL_CONSTITUTION.md`
+2. `docs/AUTHOR_IDENTITY.md`
+3. `docs/CATEGORY_EDITORIAL_GUIDE.md`
+4. `docs/ARTICLE_FORMAT_SPEC.md`
+5. `docs/IMAGE_EDITORIAL_POLICY.md`
+6. `docs/PUBLICATION_WORKFLOW.md`
+
+役割に応じて以下のSkillを使用する。
+
+- 企画: `.agents/skills/ucyuhou-article-planning/SKILL.md`
+- 執筆: `.agents/skills/ucyuhou-article-writing/SKILL.md`
+- 校閲: `.agents/skills/ucyuhou-editorial-review/SKILL.md`
+- 画像: `.agents/skills/ucyuhou-image-direction/SKILL.md`
+
+表示上の著者名と宇宙通信の発信源は、常に `宇宙を悟り法則を引き寄せる` に固定する。編集部、管理人、大いなる源泉、AIライターなどの別人格を作ってはならない。
+
 ## 検索機能の運用とビルド
 
-本プロジェクトは静的サイトであり、検索機能（`js/search.js`）のデータベースは静的にビルドされる。
-- 記事の追加、削除、または本文の修正を行った場合は、手作業で `js/search.js` を編集してはならない。
-- 必ずターミナルで `node scripts/build-search-index.js` を実行し、検索インデックスを再生成すること。
-- このスクリプトは全 `article-*.html` の `.article-body` からプレーンテキストを自動抽出し、データベースを更新する。
+本プロジェクトの正式な記事ソースは `src/content/articles/*.md` であり、検索インデックスはAstroビルド内で生成される。
+
+- 記事の追加、削除、本文修正後は `pnpm build` を実行する。
+- `js/search.js`、旧 `article-*.html`、生成済み `dist/` を記事更新のために手作業で編集しない。
+- 公開前に `pnpm exec astro check` と `pnpm build` を実行する。

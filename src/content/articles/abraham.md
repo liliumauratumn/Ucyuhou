@@ -14,10 +14,6 @@ sourceFile: "article-abraham.html"
 tags: ["引き寄せ", "ホ・オポノポノ", "ハワイ", "クリーニング"]
 authorName: "宇宙を悟り法則を引き寄せる"
 readTime: "9 min read"
-reactionLabel: "拍手"
-reactionCount: 354
-commentLabel: "コメント"
-commentCount: 28
 ---
 
 強く願うことは、時に欠乏へのフォーカスとなる。宇宙の法則が自然に働くことを「許可する」のは、エゴのコントロールを手放した状態である。
