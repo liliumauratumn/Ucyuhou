@@ -54,8 +54,8 @@ sourceFile: "article-example.html"
 | `categorySlug` | `CATEGORY_EDITORIAL_GUIDE.md` の対応表と一致させる。 |
 | `publishedAt` | `YYYY-MM-DD`。Asia/Tokyo基準。 |
 | `publishedLabel` | `publishedAt` と同じ日を日本語表記する。 |
-| `heroImage` | `public` を除いた `/assets/images/...` 形式。実在ファイルを指す。 |
-| `heroAlt` | 雰囲気ではなく画像内容を短く説明する。タイトルのコピーにしない。 |
+| `heroImage` | `public` を除いた `/assets/images/...` 形式。実在ファイルを指す。（※ただし、`categorySlug: kakera` の場合は画像不要とし、省略可能とする。） |
+| `heroAlt` | 雰囲気ではなく画像内容を短く説明する。タイトルのコピーにしない。（※ただし、`categorySlug: kakera` の場合は省略可能とする。） |
 | `theme` | 通常は `default`。宇宙通信だけ `cosmic`。 |
 | `authorName` | 常に正式な著者名。 |
 

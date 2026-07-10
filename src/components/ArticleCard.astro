@@ -3,7 +3,8 @@ interface Props {
   title: string;
   href: string;
   category: string;
-  image: string;
+  categorySlug?: string;
+  image?: string;
   excerpt?: string;
   publishedAt?: string;
   publishedLabel?: string;
@@ -15,6 +16,7 @@ const {
   title,
   href,
   category,
+  categorySlug,
   image,
   excerpt,
   publishedAt,
@@ -22,12 +24,17 @@ const {
   className = "",
   linkEnabled = true
 } = Astro.props;
+
+const isKakera = category === "思考の欠片" || categorySlug === "kakera";
+const showNoImage = isKakera && !image;
 ---
 {linkEnabled ? (
-  <a href={href} class={`article-card ${className}`}>
-    <div class="article-card__image-wrap">
-      <img src={image} alt={title} width="600" height="375" loading="lazy" />
-    </div>
+  <a href={href} class={`article-card ${showNoImage ? "article-card--no-image" : ""} ${className}`}>
+    {image && (
+      <div class="article-card__image-wrap">
+        <img src={image} alt={title} width="600" height="375" loading="lazy" />
+      </div>
+    )}
     <div class="article-card__body">
       <span class="article-card__category">{category}</span>
       <h3 class="article-card__title">{title}</h3>
@@ -40,10 +47,12 @@ const {
     </div>
   </a>
 ) : (
-  <div class={`article-card ${className}`} style="pointer-events: none; cursor: default;">
-    <div class="article-card__image-wrap">
-      <img src={image} alt={title} width="600" height="375" loading="lazy" />
-    </div>
+  <div class={`article-card ${showNoImage ? "article-card--no-image" : ""} ${className}`} style="pointer-events: none; cursor: default;">
+    {image && (
+      <div class="article-card__image-wrap">
+        <img src={image} alt={title} width="600" height="375" loading="lazy" />
+      </div>
+    )}
     <div class="article-card__body">
       <span class="article-card__category">{category}</span>
       <h3 class="article-card__title">{title}</h3>

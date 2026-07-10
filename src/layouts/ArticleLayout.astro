@@ -17,8 +17,8 @@ interface Props {
   readTime?: string;
   publishedAt: string;
   publishedLabel: string;
-  heroImage: string;
-  heroAlt: string;
+  heroImage?: string;
+  heroAlt?: string;
   theme: 'default' | 'cosmic';
   slug: string;
 }
@@ -84,9 +84,11 @@ const bodyClass = theme === 'cosmic' ? 'theme-inverted' : undefined;
       </header>
 
       <!-- Hero Image -->
-      <div class="article-hero">
-        <img src={heroImage} alt={heroAlt} width="1200" height="600" loading="eager">
-      </div>
+      {heroImage && (
+        <div class="article-hero">
+          <img src={heroImage} alt={heroAlt || title} width="1200" height="600" loading="eager">
+        </div>
+      )}
 
       <!-- Article Content -->
       <div class="article-body article-container">
