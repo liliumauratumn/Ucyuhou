@@ -7,7 +7,7 @@ const articles = defineCollection({
     slug: z.string(),
     title: z.string(),
     subtitle: z.string().optional(),
-    description: z.string().optional(),
+    description: z.string(),
     category: z.enum([
       '悟り',
       '引き寄せ',

@@ -47,8 +47,68 @@ const relatedArticles = allArticles
   .slice(0, 3);
 
 const bodyClass = theme === 'cosmic' ? 'theme-inverted' : undefined;
+
+// JSON-LD 用の絶対URL生成
+const siteUrl = Astro.site || 'https://ucyuhou.vercel.app';
+const canonicalURL = new URL(Astro.url.pathname, siteUrl);
+const absoluteHeroImage = heroImage ? new URL(heroImage, siteUrl).href : undefined;
+
+// Article JSON-LD
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": title,
+  "description": description,
+  "datePublished": publishedAt,
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": canonicalURL.href
+  },
+  "articleSection": category,
+  "author": {
+    "@type": "Organization",
+    "name": "宇宙を悟り法則を引き寄せる",
+    "url": "https://ucyuhou.vercel.app/"
+  },
+  ...(absoluteHeroImage ? { "image": [absoluteHeroImage] } : {})
+};
+
+// BreadcrumbList JSON-LD
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "ホーム",
+      "item": "https://ucyuhou.vercel.app/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": category,
+      "item": new URL(`/category/${categorySlug}/`, siteUrl).href
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": title,
+      "item": canonicalURL.href
+    }
+  ]
+};
 ---
-<BaseLayout title={`${title} | 宇宙を悟り法則を引き寄せる`} description={description} bodyClass={bodyClass}>
+<BaseLayout
+  title={`${title} | 宇宙を悟り法則を引き寄せる`}
+  description={description}
+  bodyClass={bodyClass}
+  heroImage={heroImage}
+  heroAlt={heroAlt}
+  ogType="article"
+>
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(articleSchema)} />
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(breadcrumbSchema)} />
   <SiteHeader activeSection={categorySlug} navigationEnabled={true} searchEnabled={true} />
 
   <main>

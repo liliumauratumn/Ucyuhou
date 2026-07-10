@@ -30,14 +30,21 @@ const sub1 = getArticle('hikiyose');
 const sub2 = getArticle('emerald');
 
 // Latest Articles
-const latest1 = getArticle('abraham');
-const latest2 = getArticle('emerald');
-const latest3 = getArticle('desire');
-const latest4 = getArticle('narrow');
-const latest5 = getArticle('buddha');
-const latest6 = getArticle('mezame');
-const latest7 = getArticle('scale');
-const latest8 = getArticle('allowed');
+const latestArticles = [...allArticles]
+  .sort((a, b) => {
+    const dateComparison = b.data.publishedAt.localeCompare(a.data.publishedAt);
+    if (dateComparison !== 0) return dateComparison;
+    return a.data.slug.localeCompare(b.data.slug);
+  });
+
+const latest1 = latestArticles[0];
+const latest2 = latestArticles[1];
+const latest3 = latestArticles[2];
+const latest4 = latestArticles[3];
+const latest5 = latestArticles[4];
+const latest6 = latestArticles[5];
+const latest7 = latestArticles[6];
+const latest8 = latestArticles[7];
 
 // Recommended
 const rec1 = getArticle('tolle');
