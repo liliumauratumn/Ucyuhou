@@ -17,7 +17,7 @@ Write only from an Article Brief containing at least:
 - research requirements
 - image direction
 
-If no brief exists and the user requested a full article, create a compact brief using `ucyuhou-article-planning` before drafting.
+If no brief exists and the user requested a full article, create a compact brief using `ucyuhou-article-planning` before drafting. Under the simplified one-shot pipeline, do not present this brief to the user or stop for approval; execute the pipeline continuously.
 
 ## Required reading
 
@@ -66,7 +66,7 @@ Follow `CATEGORY_EDITORIAL_GUIDE.md`.
 
 - `文書`: establish source, date, transmission, translation, and interpretation boundaries.
 - `実践`: provide steps, observation points, failure conditions, and no effect guarantee.
-- `思考の欠片`: remain compact and intentionally open; do not inflate into a standard essay.
+- `思考の欠片`: If designated as "思考の欠片" or "思考メモ" by the user, you must keep the user's text exactly as-is. Do NOT rewrite, edit, summarize, correct grammar/typos, or translate. Keep word order, punctuation, and formatting errors as "necessary noise." Do NOT add any headings, intros, conclusions, images, or summaries. Only append required frontmatter metadata and standard Markdown formatting. Do NOT auto-classify into this category unless explicitly requested by the user.
 - `宇宙通信`: use the communication form, but never present it as scientific proof or actionable prophecy.
 
 ## Frontmatter

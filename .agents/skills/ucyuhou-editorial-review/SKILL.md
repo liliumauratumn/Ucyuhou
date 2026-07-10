@@ -77,6 +77,7 @@ Verify readability for middle school students (Iwanami Shonen Bunko level):
 - Ensure abstract concepts are replaced or explained with daily life emotions or behavioral examples.
 - Ensure sentences are short and clear, prioritizing direct Japanese words over difficult Chinese-character compounds.
 - Confirm that jargon is used only when removing it would harm accuracy, and that a brief explanation is always attached.
+- **Verbatim Validation for 思考の欠片**: If the article is designated as "思考の欠片" or "思考メモ", verify that the source text provided by the user is preserved 100% verbatim without any editing, grammar corrections, summaries, or additions of headings, intros, summaries, or images.
 
 
 ### 7. Frontmatter
@@ -115,6 +116,8 @@ Use exactly one:
 - `PASS`: publishable candidate with no required content edits.
 - `PASS WITH FIXES`: publishable after listed local fixes.
 - `FAIL`: requires new research, new planning, category reconsideration, or substantial rewrite.
+
+Under the simplified one-shot pipeline, review findings should be executed immediately. If a publication blocker exists (such as duplicate content, missing citations, image generation failure, or a build error), stop and report. Otherwise, pass the article immediately and proceed to build validation.
 
 ## Output format
 
